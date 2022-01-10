@@ -8,7 +8,6 @@ target 'TestApplication' do
   # Pods for TestApplication
   pod 'ReachabilitySwift'
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
-  #pod 'Alamofire','~> 4.5.0'
   pod 'Alamofire','~> 5.3.0'
   pod 'SVProgressHUD'
 

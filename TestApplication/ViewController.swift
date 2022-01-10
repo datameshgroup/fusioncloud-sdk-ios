@@ -16,13 +16,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        requestPinning(pinning: true)
-    
+        //requestPinning(pinning: true)
+        requestPinning2()
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
         print("do login")
+    }
+    
+    func requestPinning2(){
+        SSlPinningManager.shared.callAnyApi(urlString: "https://www.cloudposintegration.io", isCertificatePinning: true) { (response) in
+                   print(response)
     }
     
     func requestPinning(pinning: Bool){
@@ -105,3 +109,4 @@ struct Certificates {
 }
 
 
+}
