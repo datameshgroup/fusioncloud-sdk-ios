@@ -23,6 +23,7 @@
 		D64169ED2789C48000947C0D /* SSLPinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64169EC2789C48000947C0D /* SSLPinningManager.swift */; };
 		D64169EF2789C75900947C0D /* datamesh_public.cer in Resources */ = {isa = PBXBuildFile; fileRef = D64169EE2789C75900947C0D /* datamesh_public.cer */; };
 		D64169F12789CB3300947C0D /* GlobalSign.cer in Resources */ = {isa = PBXBuildFile; fileRef = D64169F02789CB3300947C0D /* GlobalSign.cer */; };
+		D65F7F012794516200385402 /* SocketReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F7F002794516200385402 /* SocketReader.swift */; };
 		D685F581278ADE03005A3347 /* USERTrust RSA Certification Authority.cer in Resources */ = {isa = PBXBuildFile; fileRef = D685F580278ADE03005A3347 /* USERTrust RSA Certification Authority.cer */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		D64169EC2789C48000947C0D /* SSLPinningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningManager.swift; sourceTree = "<group>"; };
 		D64169EE2789C75900947C0D /* datamesh_public.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = datamesh_public.cer; sourceTree = "<group>"; };
 		D64169F02789CB3300947C0D /* GlobalSign.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlobalSign.cer; sourceTree = "<group>"; };
+		D65F7F002794516200385402 /* SocketReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketReader.swift; sourceTree = "<group>"; };
 		D685F580278ADE03005A3347 /* USERTrust RSA Certification Authority.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "USERTrust RSA Certification Authority.cer"; sourceTree = "<group>"; };
 		D9D8970EDA927812ADAEDB39 /* Pods-TestApplication-TestApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApplication-TestApplicationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestApplication-TestApplicationUITests/Pods-TestApplication-TestApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +192,7 @@
 				D64169EE2789C75900947C0D /* datamesh_public.cer */,
 				D60A1783276F27E300648504 /* NetworkManager.swift */,
 				D64169EC2789C48000947C0D /* SSLPinningManager.swift */,
+				D65F7F002794516200385402 /* SocketReader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65F7F012794516200385402 /* SocketReader.swift in Sources */,
 				D60A1758276F1C4700648504 /* TestApplication.xcdatamodeld in Sources */,
 				D60A1752276F1C4700648504 /* ViewController.swift in Sources */,
 				D60A1784276F27E300648504 /* NetworkManager.swift in Sources */,
@@ -624,7 +628,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TEST.TestApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -643,7 +647,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TEST.TestApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

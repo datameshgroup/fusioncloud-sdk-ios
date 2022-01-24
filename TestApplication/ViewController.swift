@@ -8,76 +8,99 @@
 
 import UIKit
 import Alamofire
+import Starscream
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , WebSocketDelegate{
+    
+   var socket: WebSocket!
+   var isConnected = false
+   let server = WebSocketServer()
+   var isCertPin = false
     
     var session: Session?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //requestPinning(pinning: true)
         requestPinning2()
+        
+        //connect to websocket ->
+       
+    }
+    
+    func startSocketConnection(){
+        var request = URLRequest(url: URL(string: "wss://www.cloudposintegration.io/nexodev")!)
+                      request.timeoutInterval = 5
+                      socket = WebSocket(request: request)
+                      socket.delegate = self
+                      socket.connect()
+    }
+    
+    /** WebSocket Delegate functions */
+    
+    func didReceive(event: WebSocketEvent, client: WebSocket) {
+           switch event {
+           case .connected(let headers):
+               isConnected = true
+               print("websocket is connected: \(headers)")
+           case .disconnected(let reason, let code):
+               isConnected = false
+               print("websocket is disconnected: \(reason) with code: \(code)")
+           case .text(let string):
+               print("Received text: \(string)")
+           case .binary(let data):
+               print("Received data: \(data.count)")
+           case .ping(_):
+               break
+           case .pong(_):
+               break
+           case .viabilityChanged(_):
+               break
+           case .reconnectSuggested(_):
+               break
+           case .cancelled:
+               isConnected = false
+           case .error(let error):
+               isConnected = false
+               handleError(error)
+           }
+       }
+       
+       func handleError(_ error: Error?) {
+           if let e = error as? WSError {
+               print("websocket encountered an WS-error: \(e.message)")
+           } else if let e = error {
+               print("websocket encountered an error: \(e.localizedDescription)")
+           } else {
+               print("websocket encountered an error")
+           }
+       }
+    
+    func disconnectSocket(){
+        if isConnected {
+            socket.disconnect()
+        } else {
+            socket.connect()
+        }
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
-        print("do login")
+        //todo:- do start socket connection
+        if self.isCertPin {
+            startSocketConnection()
+        } else {
+            print("pinning required")
+        }
     }
     
     func requestPinning2(){
         SSlPinningManager.shared.callAnyApi(urlString: "https://www.cloudposintegration.io", isCertificatePinning: true) { (response) in
-                   print(response)
-    }
-    
-    func requestPinning(pinning: Bool){
-        let url = URL(string:"wss://www.cloudposintegration.io/nexodev")
-        
-        if pinning {
-            
-//            let evaluators: [String: ServerTrustEvaluating] = ["root": PublicKeysTrustEvaluator()]
-            let evaluators = [
-              "cloudposintegration.io":
-                PinnedCertificatesTrustEvaluator(certificates: [
-                  Certificates.dataMesh
-                ])
-            ]
-            let manager = ServerTrustManager(evaluators: evaluators)
-            session = Session(serverTrustManager: manager)
-        } else {
-            session = Session()
-        }
-        
-        session!
-            .request(url!, method: .get)
-        .validate()
-        .response(completionHandler: { [weak self] response in
-            switch response.result {
-            case .success:
-                    print("pinning success")
-            case .failure(let error):
-                switch error {
-                case .serverTrustEvaluationFailed(let reason):
-                    // The reason here is a place where you might fine-tune your
-                    // error handling and possibly deduce if it's an actualy MITM
-                    // or just another error, like certificate issue.
-                    //
-                    // In this case, this will show `noRequiredEvaluator` if you try
-                    // testing against a domain not in the evaluators list which is
-                    // the closest I'm willing to setting up a MITM. In production,
-                    // it will most likely be one of the other evaluation errors.
-                    print(reason)
-
-                    print("error pining")
-                default:
-                    print("no pinning")
+                   print("pinning => \(response)")
+            // print all response html
+                if response.contains("successful"){
+                    self.isCertPin = true
                 }
-            }
-        })
-        
+            
     }
-    
-    
-    
 }
 
 

@@ -7,9 +7,11 @@ target 'TestApplication' do
 
   # Pods for TestApplication
   pod 'ReachabilitySwift'
-  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+  #pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   pod 'Alamofire','~> 5.3.0'
   pod 'SVProgressHUD'
+  pod 'Starscream', '~> 4.0.0'
+  #pod 'Starscream'
 
   target 'TestApplicationTests' do
     inherit! :search_paths
