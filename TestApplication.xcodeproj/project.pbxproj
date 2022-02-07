@@ -20,6 +20,13 @@
 		D60A1768276F1C4B00648504 /* TestApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A1767276F1C4B00648504 /* TestApplicationTests.swift */; };
 		D60A1773276F1C4B00648504 /* TestApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A1772276F1C4B00648504 /* TestApplicationUITests.swift */; };
 		D60A1784276F27E300648504 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A1783276F27E300648504 /* NetworkManager.swift */; };
+		D62B10D727A66E2700C9EEE1 /* SalePOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B10D627A66E2700C9EEE1 /* SalePOIRequest.swift */; };
+		D62B10D927A66EA100C9EEE1 /* SecurityTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B10D827A66EA100C9EEE1 /* SecurityTrailer.swift */; };
+		D62B10DB27A66EBE00C9EEE1 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B10DA27A66EBE00C9EEE1 /* MessageHeader.swift */; };
+		D62B10DD27A6722800C9EEE1 /* SalePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B10DC27A6722800C9EEE1 /* SalePOI.swift */; };
+		D62B10DF27A675F700C9EEE1 /* SalePOIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B10DE27A675F700C9EEE1 /* SalePOIResponse.swift */; };
+		D62F5AB627AF843300A670A8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F5AB527AF843300A670A8 /* LoginRequest.swift */; };
+		D62F5AB827AF8B2A00A670A8 /* SaleToPOILoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F5AB727AF8B2A00A670A8 /* SaleToPOILoginRequest.swift */; };
 		D64169ED2789C48000947C0D /* SSLPinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64169EC2789C48000947C0D /* SSLPinningManager.swift */; };
 		D64169EF2789C75900947C0D /* datamesh_public.cer in Resources */ = {isa = PBXBuildFile; fileRef = D64169EE2789C75900947C0D /* datamesh_public.cer */; };
 		D64169F12789CB3300947C0D /* GlobalSign.cer in Resources */ = {isa = PBXBuildFile; fileRef = D64169F02789CB3300947C0D /* GlobalSign.cer */; };
@@ -69,6 +76,13 @@
 		D60A1772276F1C4B00648504 /* TestApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApplicationUITests.swift; sourceTree = "<group>"; };
 		D60A1774276F1C4B00648504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60A1783276F27E300648504 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D62B10D627A66E2700C9EEE1 /* SalePOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePOIRequest.swift; sourceTree = "<group>"; };
+		D62B10D827A66EA100C9EEE1 /* SecurityTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTrailer.swift; sourceTree = "<group>"; };
+		D62B10DA27A66EBE00C9EEE1 /* MessageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
+		D62B10DC27A6722800C9EEE1 /* SalePOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePOI.swift; sourceTree = "<group>"; };
+		D62B10DE27A675F700C9EEE1 /* SalePOIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePOIResponse.swift; sourceTree = "<group>"; };
+		D62F5AB527AF843300A670A8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		D62F5AB727AF8B2A00A670A8 /* SaleToPOILoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleToPOILoginRequest.swift; sourceTree = "<group>"; };
 		D64169EC2789C48000947C0D /* SSLPinningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningManager.swift; sourceTree = "<group>"; };
 		D64169EE2789C75900947C0D /* datamesh_public.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = datamesh_public.cer; sourceTree = "<group>"; };
 		D64169F02789CB3300947C0D /* GlobalSign.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlobalSign.cer; sourceTree = "<group>"; };
@@ -153,6 +167,7 @@
 		D60A174C276F1C4700648504 /* TestApplication */ = {
 			isa = PBXGroup;
 			children = (
+				D62B10D527A66D8100C9EEE1 /* Model */,
 				D60A1782276F27C800648504 /* Utility */,
 				D60A174D276F1C4700648504 /* AppDelegate.swift */,
 				D60A174F276F1C4700648504 /* SceneDelegate.swift */,
@@ -195,6 +210,20 @@
 				D65F7F002794516200385402 /* SocketReader.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D62B10D527A66D8100C9EEE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D62B10D627A66E2700C9EEE1 /* SalePOIRequest.swift */,
+				D62B10D827A66EA100C9EEE1 /* SecurityTrailer.swift */,
+				D62B10DA27A66EBE00C9EEE1 /* MessageHeader.swift */,
+				D62B10DC27A6722800C9EEE1 /* SalePOI.swift */,
+				D62B10DE27A675F700C9EEE1 /* SalePOIResponse.swift */,
+				D62F5AB527AF843300A670A8 /* LoginRequest.swift */,
+				D62F5AB727AF8B2A00A670A8 /* SaleToPOILoginRequest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,13 +468,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62B10DF27A675F700C9EEE1 /* SalePOIResponse.swift in Sources */,
+				D62F5AB627AF843300A670A8 /* LoginRequest.swift in Sources */,
 				D65F7F012794516200385402 /* SocketReader.swift in Sources */,
 				D60A1758276F1C4700648504 /* TestApplication.xcdatamodeld in Sources */,
 				D60A1752276F1C4700648504 /* ViewController.swift in Sources */,
 				D60A1784276F27E300648504 /* NetworkManager.swift in Sources */,
+				D62B10DB27A66EBE00C9EEE1 /* MessageHeader.swift in Sources */,
 				D60A174E276F1C4700648504 /* AppDelegate.swift in Sources */,
+				D62B10D927A66EA100C9EEE1 /* SecurityTrailer.swift in Sources */,
+				D62B10D727A66E2700C9EEE1 /* SalePOIRequest.swift in Sources */,
+				D62F5AB827AF8B2A00A670A8 /* SaleToPOILoginRequest.swift in Sources */,
 				D64169ED2789C48000947C0D /* SSLPinningManager.swift in Sources */,
 				D60A1750276F1C4700648504 /* SceneDelegate.swift in Sources */,
+				D62B10DD27A6722800C9EEE1 /* SalePOI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

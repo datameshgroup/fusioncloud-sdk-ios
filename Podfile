@@ -11,6 +11,7 @@ target 'TestApplication' do
   pod 'Alamofire','~> 5.3.0'
   pod 'SVProgressHUD'
   pod 'Starscream', '~> 4.0.0'
+  pod 'ObjectMapper', '~> 4.2'
   #pod 'Starscream'
 
   target 'TestApplicationTests' do

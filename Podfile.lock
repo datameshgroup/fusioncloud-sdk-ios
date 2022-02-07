@@ -1,11 +1,13 @@
 PODS:
   - Alamofire (5.3.0)
+  - ObjectMapper (4.2.0)
   - ReachabilitySwift (5.0.0)
   - Starscream (4.0.4)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.3.0)
+  - ObjectMapper (~> 4.2)
   - ReachabilitySwift
   - Starscream (~> 4.0.0)
   - SVProgressHUD
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ObjectMapper
     - ReachabilitySwift
     - Starscream
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 5e207a08af81c76543e215710988ab3ccd36530f
+PODFILE CHECKSUM: 9ffc3bc142a0e3830cbb321376bb1819da18a58d
 
 COCOAPODS: 1.10.0
