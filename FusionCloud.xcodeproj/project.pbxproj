@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0074FFE6FBCCB8201CCFB841 /* Pods_FusionCloud_FusionCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */; };
+		5A5DED1DCC5E80775535E7E0 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */; };
+		D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6432839FBA4004A1772 /* PaymentResponse.swift */; };
+		D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6442839FBA4004A1772 /* LoginResponse.swift */; };
+		D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6452839FBA4004A1772 /* SalePOIResponse.swift */; };
+		D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6462839FBA4004A1772 /* SecurityTrailer.swift */; };
+		D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6482839FBA4004A1772 /* LoginRequest.swift */; };
+		D615D6602839FBA4004A1772 /* PrintRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6492839FBA4004A1772 /* PrintRequest.swift */; };
+		D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64A2839FBA4004A1772 /* InputRequest.swift */; };
+		D615D6622839FBA4004A1772 /* SalePOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */; };
+		D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */; };
+		D615D6642839FBA4004A1772 /* ReconcillationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */; };
+		D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64E2839FBA4004A1772 /* DisplayRequest.swift */; };
+		D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64F2839FBA4004A1772 /* AbortRequest.swift */; };
+		D615D6672839FBA4004A1772 /* PaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6502839FBA4004A1772 /* PaymentRequest.swift */; };
+		D615D6682839FBA4004A1772 /* TransactionStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */; };
+		D615D6692839FBA4004A1772 /* CardAcquisitionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */; };
+		D615D66A2839FBA4004A1772 /* SalePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6532839FBA4004A1772 /* SalePOI.swift */; };
+		D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6542839FBA4004A1772 /* MessageHeader.swift */; };
+		D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6562839FBA4004A1772 /* Crypto.swift */; };
+		D615D66D2839FBA4004A1772 /* GlobalSign.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6572839FBA4004A1772 /* GlobalSign.cer */; };
+		D615D66E2839FBA4004A1772 /* datamesh_public.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6582839FBA4004A1772 /* datamesh_public.cer */; };
+		D615D66F2839FBA4004A1772 /* USERTrust RSA Certification Authority.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */; };
+		D615D6702839FBA4004A1772 /* SSLPinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */; };
+		D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB12844EDB8001D123C /* PrintResponse.swift */; };
+		D6712AB42844EE00001D123C /* InputResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB32844EE00001D123C /* InputResponse.swift */; };
+		D6712AB62844EE34001D123C /* ReconcillationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB52844EE34001D123C /* ReconcillationResponse.swift */; };
+		D6712AB82844EE5A001D123C /* AbortResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB72844EE5A001D123C /* AbortResponse.swift */; };
+		D6712ABA2844EE83001D123C /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
+		D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */; };
+		D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABD28451104001D123C /* LogoutRequest.swift */; };
+		D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABF2845117B001D123C /* LogoutResponse.swift */; };
+		D68F217428294B5200BC809A /* FusionCloud.docc in Sources */ = {isa = PBXBuildFile; fileRef = D68F217328294B5200BC809A /* FusionCloud.docc */; };
+		D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F217E28294B5200BC809A /* FusionCloudTests.swift */; };
+		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D68F218A28294C7700BC809A /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F218928294C7700BC809A /* TestClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D68F217B28294B5200BC809A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D68F216628294B5200BC809A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D68F216E28294B5200BC809A;
+			remoteInfo = FusionCloud;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud_FusionCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud-FusionCloudTests.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud-FusionCloudTests.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D615D6432839FBA4004A1772 /* PaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
+		D615D6442839FBA4004A1772 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		D615D6452839FBA4004A1772 /* SalePOIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOIResponse.swift; sourceTree = "<group>"; };
+		D615D6462839FBA4004A1772 /* SecurityTrailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityTrailer.swift; sourceTree = "<group>"; };
+		D615D6482839FBA4004A1772 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		D615D6492839FBA4004A1772 /* PrintRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintRequest.swift; sourceTree = "<group>"; };
+		D615D64A2839FBA4004A1772 /* InputRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRequest.swift; sourceTree = "<group>"; };
+		D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOIRequest.swift; sourceTree = "<group>"; };
+		D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOILoginRequest.swift; sourceTree = "<group>"; };
+		D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconcillationRequest.swift; sourceTree = "<group>"; };
+		D615D64E2839FBA4004A1772 /* DisplayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRequest.swift; sourceTree = "<group>"; };
+		D615D64F2839FBA4004A1772 /* AbortRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbortRequest.swift; sourceTree = "<group>"; };
+		D615D6502839FBA4004A1772 /* PaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRequest.swift; sourceTree = "<group>"; };
+		D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusRequest.swift; sourceTree = "<group>"; };
+		D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAcquisitionRequest.swift; sourceTree = "<group>"; };
+		D615D6532839FBA4004A1772 /* SalePOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOI.swift; sourceTree = "<group>"; };
+		D615D6542839FBA4004A1772 /* MessageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
+		D615D6562839FBA4004A1772 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		D615D6572839FBA4004A1772 /* GlobalSign.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlobalSign.cer; sourceTree = "<group>"; };
+		D615D6582839FBA4004A1772 /* datamesh_public.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = datamesh_public.cer; sourceTree = "<group>"; };
+		D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "USERTrust RSA Certification Authority.cer"; sourceTree = "<group>"; };
+		D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinningManager.swift; sourceTree = "<group>"; };
+		D6712AB12844EDB8001D123C /* PrintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintResponse.swift; sourceTree = "<group>"; };
+		D6712AB32844EE00001D123C /* InputResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputResponse.swift; sourceTree = "<group>"; };
+		D6712AB52844EE34001D123C /* ReconcillationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconcillationResponse.swift; sourceTree = "<group>"; };
+		D6712AB72844EE5A001D123C /* AbortResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbortResponse.swift; sourceTree = "<group>"; };
+		D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatusResponse.swift; sourceTree = "<group>"; };
+		D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAcquisitionResponse.swift; sourceTree = "<group>"; };
+		D6712ABD28451104001D123C /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		D6712ABF2845117B001D123C /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		D67B727D2831140A0032052F /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
+		D68F217328294B5200BC809A /* FusionCloud.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FusionCloud.docc; sourceTree = "<group>"; };
+		D68F217E28294B5200BC809A /* FusionCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloudTests.swift; sourceTree = "<group>"; };
+		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D68F216C28294B5200BC809A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A5DED1DCC5E80775535E7E0 /* Pods_FusionCloud.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D68F217628294B5200BC809A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0074FFE6FBCCB8201CCFB841 /* Pods_FusionCloud_FusionCloudTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A4DD0407C91046B8157D561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */,
+				DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */,
+				79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */,
+				94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		724F2F26FE2A0B8C2BC68D02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */,
+				51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D615D6412839FBA4004A1772 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D615D6422839FBA4004A1772 /* Response */,
+				D615D6472839FBA4004A1772 /* Request */,
+				D615D6532839FBA4004A1772 /* SalePOI.swift */,
+				D615D6542839FBA4004A1772 /* MessageHeader.swift */,
+				D615D6462839FBA4004A1772 /* SecurityTrailer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D615D6422839FBA4004A1772 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D615D6432839FBA4004A1772 /* PaymentResponse.swift */,
+				D615D6442839FBA4004A1772 /* LoginResponse.swift */,
+				D615D6452839FBA4004A1772 /* SalePOIResponse.swift */,
+				D6712AB12844EDB8001D123C /* PrintResponse.swift */,
+				D6712AB32844EE00001D123C /* InputResponse.swift */,
+				D6712AB52844EE34001D123C /* ReconcillationResponse.swift */,
+				D6712AB72844EE5A001D123C /* AbortResponse.swift */,
+				D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */,
+				D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */,
+				D6712ABF2845117B001D123C /* LogoutResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D615D6472839FBA4004A1772 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D615D6482839FBA4004A1772 /* LoginRequest.swift */,
+				D615D6492839FBA4004A1772 /* PrintRequest.swift */,
+				D615D64A2839FBA4004A1772 /* InputRequest.swift */,
+				D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */,
+				D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */,
+				D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */,
+				D615D64E2839FBA4004A1772 /* DisplayRequest.swift */,
+				D615D64F2839FBA4004A1772 /* AbortRequest.swift */,
+				D615D6502839FBA4004A1772 /* PaymentRequest.swift */,
+				D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */,
+				D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */,
+				D6712ABD28451104001D123C /* LogoutRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D615D6552839FBA4004A1772 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D615D6562839FBA4004A1772 /* Crypto.swift */,
+				D615D6572839FBA4004A1772 /* GlobalSign.cer */,
+				D615D6582839FBA4004A1772 /* datamesh_public.cer */,
+				D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */,
+				D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		D68F216528294B5200BC809A = {
+			isa = PBXGroup;
+			children = (
+				D68F217128294B5200BC809A /* FusionCloud */,
+				D68F217D28294B5200BC809A /* FusionCloudTests */,
+				D68F21A52829561100BC809A /* FusionCloud.framework */,
+				D67B727D2831140A0032052F /* FusionCloudTests.xctest */,
+				0A4DD0407C91046B8157D561 /* Pods */,
+				724F2F26FE2A0B8C2BC68D02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D68F217128294B5200BC809A /* FusionCloud */ = {
+			isa = PBXGroup;
+			children = (
+				D615D6412839FBA4004A1772 /* Model */,
+				D615D6552839FBA4004A1772 /* Utility */,
+				D68F217228294B5200BC809A /* FusionCloud.h */,
+				D68F217328294B5200BC809A /* FusionCloud.docc */,
+				D68F218928294C7700BC809A /* TestClass.swift */,
+			);
+			path = FusionCloud;
+			sourceTree = "<group>";
+		};
+		D68F217D28294B5200BC809A /* FusionCloudTests */ = {
+			isa = PBXGroup;
+			children = (
+				D68F217E28294B5200BC809A /* FusionCloudTests.swift */,
+			);
+			path = FusionCloudTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D68F216A28294B5200BC809A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68F218028294B5200BC809A /* FusionCloud.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D68F216E28294B5200BC809A /* FusionCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */;
+			buildPhases = (
+				667324C5BC0E24D67AA99438 /* [CP] Check Pods Manifest.lock */,
+				D68F216A28294B5200BC809A /* Headers */,
+				D68F216B28294B5200BC809A /* Sources */,
+				D68F216C28294B5200BC809A /* Frameworks */,
+				D68F216D28294B5200BC809A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FusionCloud;
+			productName = FusionCloud;
+			productReference = D68F21A52829561100BC809A /* FusionCloud.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D68F217828294B5200BC809A /* FusionCloudTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D68F218628294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloudTests" */;
+			buildPhases = (
+				1630C4A04129FF08AAD10D14 /* [CP] Check Pods Manifest.lock */,
+				D68F217528294B5200BC809A /* Sources */,
+				D68F217628294B5200BC809A /* Frameworks */,
+				D68F217728294B5200BC809A /* Resources */,
+				9A0AE6CBE70906944F72AA34 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D68F217C28294B5200BC809A /* PBXTargetDependency */,
+			);
+			name = FusionCloudTests;
+			productName = FusionCloudTests;
+			productReference = D67B727D2831140A0032052F /* FusionCloudTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D68F216628294B5200BC809A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					D68F216E28294B5200BC809A = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					D68F217828294B5200BC809A = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D68F216928294B5200BC809A /* Build configuration list for PBXProject "FusionCloud" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D68F216528294B5200BC809A;
+			productRefGroup = D68F216528294B5200BC809A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D68F216E28294B5200BC809A /* FusionCloud */,
+				D68F217828294B5200BC809A /* FusionCloudTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D68F216D28294B5200BC809A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D615D66D2839FBA4004A1772 /* GlobalSign.cer in Resources */,
+				D615D66E2839FBA4004A1772 /* datamesh_public.cer in Resources */,
+				D615D66F2839FBA4004A1772 /* USERTrust RSA Certification Authority.cer in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D68F217728294B5200BC809A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1630C4A04129FF08AAD10D14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FusionCloud-FusionCloudTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		667324C5BC0E24D67AA99438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FusionCloud-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A0AE6CBE70906944F72AA34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D68F216B28294B5200BC809A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */,
+				D68F218A28294C7700BC809A /* TestClass.swift in Sources */,
+				D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */,
+				D615D6692839FBA4004A1772 /* CardAcquisitionRequest.swift in Sources */,
+				D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */,
+				D6712ABA2844EE83001D123C /* TransactionStatusResponse.swift in Sources */,
+				D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */,
+				D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */,
+				D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */,
+				D6712AB42844EE00001D123C /* InputResponse.swift in Sources */,
+				D615D66A2839FBA4004A1772 /* SalePOI.swift in Sources */,
+				D68F217428294B5200BC809A /* FusionCloud.docc in Sources */,
+				D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */,
+				D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */,
+				D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */,
+				D615D6672839FBA4004A1772 /* PaymentRequest.swift in Sources */,
+				D615D6702839FBA4004A1772 /* SSLPinningManager.swift in Sources */,
+				D615D6642839FBA4004A1772 /* ReconcillationRequest.swift in Sources */,
+				D6712AB82844EE5A001D123C /* AbortResponse.swift in Sources */,
+				D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */,
+				D615D6602839FBA4004A1772 /* PrintRequest.swift in Sources */,
+				D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */,
+				D615D6682839FBA4004A1772 /* TransactionStatusRequest.swift in Sources */,
+				D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */,
+				D6712AB62844EE34001D123C /* ReconcillationResponse.swift in Sources */,
+				D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */,
+				D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */,
+				D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */,
+				D615D6622839FBA4004A1772 /* SalePOIRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D68F217528294B5200BC809A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D68F217C28294B5200BC809A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D68F216E28294B5200BC809A /* FusionCloud */;
+			targetProxy = D68F217B28294B5200BC809A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D68F218128294B5200BC809A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D68F218228294B5200BC809A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D68F218428294B5200BC809A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D68F218528294B5200BC809A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D68F218728294B5200BC809A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloudTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D68F218828294B5200BC809A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloudTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D68F216928294B5200BC809A /* Build configuration list for PBXProject "FusionCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D68F218128294B5200BC809A /* Debug */,
+				D68F218228294B5200BC809A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D68F218428294B5200BC809A /* Debug */,
+				D68F218528294B5200BC809A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D68F218628294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloudTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D68F218728294B5200BC809A /* Debug */,
+				D68F218828294B5200BC809A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D68F216628294B5200BC809A /* Project object */;
+}

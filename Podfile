@@ -1,25 +1,21 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+# platform :ios, '9.0'
 
-target 'TestApplication' do
+target 'FusionCloud' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TestApplication
+    # Pods for TestAppDM
   pod 'ReachabilitySwift'
-  #pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   pod 'Alamofire','~> 5.3.0'
   pod 'SVProgressHUD'
   pod 'Starscream', '~> 4.0.0'
   pod 'ObjectMapper', '~> 4.2'
-  #pod 'Starscream'
+  pod 'IDZSwiftCommonCrypto', '~> 0.10'
 
-  target 'TestApplicationTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  # Pods for FusionCloud
 
-  target 'TestApplicationUITests' do
+  target 'FusionCloudTests' do
     # Pods for testing
   end
 
