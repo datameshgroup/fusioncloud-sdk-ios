@@ -17,7 +17,7 @@ public class LogoutResponse: Mappable {
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        response     <-  map["Response"]
+        response     <-  map["Result"]
         errorCondition <- map["ErrorCondition"]
         additionalResposne  <-  map["AdditionalResponse"]
     }

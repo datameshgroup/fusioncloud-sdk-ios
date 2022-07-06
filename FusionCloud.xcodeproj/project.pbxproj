@@ -31,6 +31,7 @@
 		D615D66E2839FBA4004A1772 /* datamesh_public.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6582839FBA4004A1772 /* datamesh_public.cer */; };
 		D615D66F2839FBA4004A1772 /* USERTrust RSA Certification Authority.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */; };
 		D615D6702839FBA4004A1772 /* SSLPinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */; };
+		D64E78162867537100E6CC46 /* FusionCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E78152867537100E6CC46 /* FusionCloud.swift */; };
 		D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB12844EDB8001D123C /* PrintResponse.swift */; };
 		D6712AB42844EE00001D123C /* InputResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB32844EE00001D123C /* InputResponse.swift */; };
 		D6712AB62844EE34001D123C /* ReconcillationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB52844EE34001D123C /* ReconcillationResponse.swift */; };
@@ -83,6 +84,7 @@
 		D615D6582839FBA4004A1772 /* datamesh_public.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = datamesh_public.cer; sourceTree = "<group>"; };
 		D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "USERTrust RSA Certification Authority.cer"; sourceTree = "<group>"; };
 		D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinningManager.swift; sourceTree = "<group>"; };
+		D64E78152867537100E6CC46 /* FusionCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloud.swift; sourceTree = "<group>"; };
 		D6712AB12844EDB8001D123C /* PrintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintResponse.swift; sourceTree = "<group>"; };
 		D6712AB32844EE00001D123C /* InputResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputResponse.swift; sourceTree = "<group>"; };
 		D6712AB52844EE34001D123C /* ReconcillationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconcillationResponse.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				D615D6582839FBA4004A1772 /* datamesh_public.cer */,
 				D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */,
 				D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */,
+				D64E78152867537100E6CC46 /* FusionCloud.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				D615D6682839FBA4004A1772 /* TransactionStatusRequest.swift in Sources */,
 				D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */,
 				D6712AB62844EE34001D123C /* ReconcillationResponse.swift in Sources */,
+				D64E78162867537100E6CC46 /* FusionCloud.swift in Sources */,
 				D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */,
 				D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */,
 				D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */,

@@ -181,9 +181,6 @@ public class Crypto {
 }
 
 
-
-
-
 public enum MacValidation: Error {
     case runtimeError(String)
 }

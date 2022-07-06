@@ -9,9 +9,6 @@
 import Foundation
 import ObjectMapper
 
-
-
-
 public class SalePOIResponse: Mappable {
     
     public var messageheader: MessageHeader?
@@ -39,7 +36,7 @@ public class SalePOIResponse: Mappable {
         transactionStatus   <-  map["TransactionStatusResponse"]
         printResponse       <-  map["PrintResponse"]
         reconResponse       <-  map["ReconciliationResponse"]
-        loginResponse       <-  map["LogoutResponse"]
+        logoutResponse       <-  map["LogoutResponse"]
         securityTrailer     <-  map["SecurityTrailer"]
     }
 }
