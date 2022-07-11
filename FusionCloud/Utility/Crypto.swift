@@ -17,7 +17,7 @@ public class Crypto {
     
     public func buildRequest<T: Mappable>(kek: String, request: T,header: MessageHeader, security: SecurityTrailer, type: String) -> String{
         
-        print("request => \(request)")
+        //print("request => \(request)")
         let requestBody = buildRequestBody(request: request, header: header, requestType: type)
         let saleToPOIRequest = "{\"SaleToPOIRequest\":{ \(requestBody),\(buildSecurityTrailer(kek: kek, request: requestBody, security: security))}"
         return saleToPOIRequest
@@ -32,12 +32,12 @@ public class Crypto {
         let key = self.generate16ByteKey()
         let encryptedKey = self.generateEncryptedKey(randomKey: key, KEK: kek)
         
-        print("inside request => \(request) end request")
+        //print("inside request => \(request) end request")
         
         /** Part of loginRequest */
         let encryptedString = hexString(fromArray: encryptedKey, uppercase: true)
         let hexKey = hexString(fromArray: key, uppercase: false)
-        print("(build)data=> \(request) , hexKey \(hexKey)")
+        //print("(build)data=> \(request) , hexKey \(hexKey)")
         let MAC = generateMAC(macBody: request, hexKey: hexKey)
         
             
@@ -59,7 +59,7 @@ public class Crypto {
         var bytes = [UInt8](repeating: 0, count: 16)
         let byteKey = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
         if byteKey == errSecSuccess {
-            print("16 byte key generated...")
+            //print("16 byte key generated...")
         }
         return bytes
     }
@@ -160,7 +160,7 @@ public class Crypto {
             kek: String,
             raw: String)throws{
                 let macBody = getRawMacBody(jsonRaw: raw)
-                print("mac \(macBody)")
+                //print("mac \(macBody)")
                 let encryptedKey = securityTrailer.authenticationData?.recipient?.kek?.encryptedKey?.lowercased()
                 let encryptedKeyBytes = arrayFrom(hexString: encryptedKey!)
                 let key = self.extractEncryptedKey(encryptedKey: encryptedKeyBytes, kek: kek)
