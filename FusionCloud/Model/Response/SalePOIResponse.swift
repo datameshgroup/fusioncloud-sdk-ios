@@ -16,7 +16,6 @@ public class SalePOIResponse: Mappable {
     public var securityTrailer: SecurityTrailer?
 
     public var paymentResponse: PaymentResponse?
-    public var displayRequest: DisplayRequest?
     public var inputResponse: InputResponse?
     public var abortResponse: EventNotification?
     public var transactionStatus: TransactionStatusResponse?
@@ -30,13 +29,12 @@ public class SalePOIResponse: Mappable {
         messageheader       <-  map["MessageHeader"]
         loginResponse       <-  map["LoginResponse"]
         paymentResponse     <-  map["PaymentResponse"]
-        displayRequest      <-  map["DisplayRequest"]
         inputResponse       <-  map["InputResponse"]
         abortResponse       <-  map["EventNotification"]
         transactionStatus   <-  map["TransactionStatusResponse"]
         printResponse       <-  map["PrintResponse"]
         reconResponse       <-  map["ReconciliationResponse"]
-        logoutResponse       <-  map["LogoutResponse"]
+        logoutResponse      <-  map["LogoutResponse"]
         securityTrailer     <-  map["SecurityTrailer"]
     }
 }

@@ -16,7 +16,6 @@
 		D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6482839FBA4004A1772 /* LoginRequest.swift */; };
 		D615D6602839FBA4004A1772 /* PrintRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6492839FBA4004A1772 /* PrintRequest.swift */; };
 		D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64A2839FBA4004A1772 /* InputRequest.swift */; };
-		D615D6622839FBA4004A1772 /* SalePOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */; };
 		D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */; };
 		D615D6642839FBA4004A1772 /* ReconcillationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */; };
 		D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64E2839FBA4004A1772 /* DisplayRequest.swift */; };
@@ -40,6 +39,7 @@
 		D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */; };
 		D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABD28451104001D123C /* LogoutRequest.swift */; };
 		D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABF2845117B001D123C /* LogoutResponse.swift */; };
+		D67D0CD82883D39E00B7003C /* SalePOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */; };
 		D68F217428294B5200BC809A /* FusionCloud.docc in Sources */ = {isa = PBXBuildFile; fileRef = D68F217328294B5200BC809A /* FusionCloud.docc */; };
 		D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F217E28294B5200BC809A /* FusionCloudTests.swift */; };
 		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,7 +69,6 @@
 		D615D6482839FBA4004A1772 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		D615D6492839FBA4004A1772 /* PrintRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintRequest.swift; sourceTree = "<group>"; };
 		D615D64A2839FBA4004A1772 /* InputRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRequest.swift; sourceTree = "<group>"; };
-		D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOIRequest.swift; sourceTree = "<group>"; };
 		D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOILoginRequest.swift; sourceTree = "<group>"; };
 		D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconcillationRequest.swift; sourceTree = "<group>"; };
 		D615D64E2839FBA4004A1772 /* DisplayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRequest.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		D6712ABD28451104001D123C /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		D6712ABF2845117B001D123C /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		D67B727D2831140A0032052F /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePOIRequest.swift; sourceTree = "<group>"; };
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F217328294B5200BC809A /* FusionCloud.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FusionCloud.docc; sourceTree = "<group>"; };
 		D68F217E28294B5200BC809A /* FusionCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloudTests.swift; sourceTree = "<group>"; };
@@ -177,7 +177,6 @@
 				D615D6482839FBA4004A1772 /* LoginRequest.swift */,
 				D615D6492839FBA4004A1772 /* PrintRequest.swift */,
 				D615D64A2839FBA4004A1772 /* InputRequest.swift */,
-				D615D64B2839FBA4004A1772 /* SalePOIRequest.swift */,
 				D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */,
 				D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */,
 				D615D64E2839FBA4004A1772 /* DisplayRequest.swift */,
@@ -186,6 +185,7 @@
 				D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */,
 				D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */,
 				D6712ABD28451104001D123C /* LogoutRequest.swift */,
+				D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */,
 				D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */,
 				D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */,
-				D615D6622839FBA4004A1772 /* SalePOIRequest.swift in Sources */,
+				D67D0CD82883D39E00B7003C /* SalePOIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

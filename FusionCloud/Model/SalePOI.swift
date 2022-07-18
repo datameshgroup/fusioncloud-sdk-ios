@@ -12,9 +12,11 @@ import ObjectMapper
 public class SalePOI : Mappable{
    
     public var salePOIResponse: SalePOIResponse?
+    public var salePOIRequest: SalePOIRequest?
     public required init?(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
           salePOIResponse <- map["SaleToPOIResponse"]
+          salePOIRequest <- map["SaleToPOIRequest"]
     }
 }

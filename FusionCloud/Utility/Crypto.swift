@@ -174,7 +174,12 @@ public class Crypto {
     
     public func getRawMacBody(jsonRaw: String)-> String{
         let end = ",\"SecurityTrailer\""
-        let start = "{\"SaleToPOIResponse\":{"
+        var start = "{\"SaleToPOIResponse\":{"
+        
+        if jsonRaw.contains("SaleToPOIRequest"){
+            start = "{\"SaleToPOIRequest\":{"
+        }
+        
         let first = jsonRaw.components(separatedBy: end).first?.replacingOccurrences(of: start, with: "")
         return first!
     }

@@ -42,6 +42,22 @@ This project uses the following dependencies
 
 - [IDZSwiftCommonCrypto](https://github.com/iosdevzone/IDZSwiftCommonCrypto)- pod dependency that help encryption/decryption
 
+## Re-Building FusionCloud Framework
+
+This is the instruction on rebuilding FusionCloud framework if there will be an update or new integration will be made.
+
+- Pressf cmd + B or cmd + K + b to rebuild after the changes
+
+- Once build successful, Select fusion cloud toolkit icon under FusionCloud Project, Show in Finder ( step 2 image under resources )
+
+- After redirected to folder location copy the Framework to be pasted on App to which it will be integrated
+
+- On the Workspace app to which it will be integrated. Select Workspace, Choose General and add to the library under (Frameworks, Libraries, and Embedded content section). ( step 4 image under resources )
+
+- Show in Finder the selected framework and replace the existing framework or Embed and Sign if not yet integrated
+
+- Finally rebuild your test application
+
 ## Usage
 
 The com.dmg.fusion.client.WebSocketClient.connect(URI) method expects a valid wss URI to connect to. Unify utilises a self-signed root CA provided by DataMesh. The certificate must be added to the project directory and its location must be specified in the properties file (see Getting Started) with key certificate.location.
