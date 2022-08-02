@@ -11,28 +11,28 @@ import ObjectMapper
 public class TransactionStatusRequest: Mappable {
     
     
-    public var messageRef: MessageReference?
+    public var messageReference: MessageReference?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        messageRef     <-  map["MessageReference"]
+        messageReference     <-  map["MessageReference"]
     }
 }
 
 public class MessageReference: Mappable {
     
     public var messageCategory: String?
-    public var serviceId: String?
+    public var serviceID: String?
     public var saleID: String?
-    public var poiId: String?
+    public var poiID: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         messageCategory <-      map["MessageCategory"]
-        serviceId       <-      map["ServiceID"]
+        serviceID       <-      map["ServiceID"]
         saleID          <-      map["SaleID"]
-        poiId           <-      map["POIID"]
+        poiID           <-      map["POIID"]
     }
 }

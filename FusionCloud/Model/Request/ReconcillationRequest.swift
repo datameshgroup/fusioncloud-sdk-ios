@@ -10,14 +10,14 @@ import ObjectMapper
 
 public class ReconcillationRequest: Mappable {
     
-    var reconType: String?
-    var poiReconId: String?
+    var reconciliationType: String?
+    var poiReconciliationID: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        reconType           <-      map["ReconciliationType"]
-        poiReconId          <-      map["POIReconciliationID"]
+        reconciliationType           <-      map["ReconciliationType"]
+        poiReconciliationID          <-      map["POIReconciliationID"]
     }
 }
 

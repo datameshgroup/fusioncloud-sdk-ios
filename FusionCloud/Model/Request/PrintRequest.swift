@@ -24,7 +24,7 @@ public class PrintOuput: Mappable {
     
     public var documentQualifier: String?
     public var integratedPrintFlag: Bool?
-    public var requiredSignature: Bool?
+    public var requiredSignatureFlag: Bool?
     public var outputContent: OutputContent?
     
     public required init?(map: Map) {}
@@ -32,7 +32,7 @@ public class PrintOuput: Mappable {
     public func mapping(map: Map) {
         documentQualifier   <-  map["DocumentQualifier"]
         integratedPrintFlag <-  map["IntegratedPrintFlag"]
-        requiredSignature   <-  map["RequiredSignatureFlag"]
+        requiredSignatureFlag   <-  map["RequiredSignatureFlag"]
         outputContent       <-  map["OutputContent"]
     }
 }

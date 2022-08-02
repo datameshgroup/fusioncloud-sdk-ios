@@ -37,6 +37,11 @@ public class Response : Mappable {
         additionalResponse  <-  map["AdditionalResponse"]
     }
     
+    public func isSuccess() -> Bool {
+        let r = result?.uppercased() ?? "";
+        return (r == "SUCCESS") || (r == "PARTIAL")
+    }
+    
     public required init?(map: Map) {}
     public required init(){}
 }
@@ -96,16 +101,16 @@ public class POIStatus : Mappable {
     public var PEDOKFlag: Bool?
     public var cardReaderOKFlag: Bool?
     public var printerStatus: String?
-    public var commuOKFlag: Bool?
-    public var fraudPrevFlag: Bool?
+    public var communicationOKFlag: Bool?
+    public var fraudPreventionFlag: Bool?
     
     public func mapping(map: Map) {
         globalStatus        <-  map["GlobalStatus"]
         PEDOKFlag           <-  map["PEDOKFlag"]
         cardReaderOKFlag    <-  map["CardReaderOKFlag"]
         printerStatus       <-  map["PrinterStatus"]
-        commuOKFlag         <-  map["CommunicationOKFlag"]
-        fraudPrevFlag       <-  map["FraudPreventionFlag"]
+        communicationOKFlag         <-  map["CommunicationOKFlag"]
+        fraudPreventionFlag       <-  map["FraudPreventionFlag"]
     }
     
     public required init?(map: Map) {}
