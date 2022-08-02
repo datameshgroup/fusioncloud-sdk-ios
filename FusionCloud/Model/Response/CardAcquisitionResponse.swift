@@ -13,7 +13,7 @@ public class CardAcquisitionResponse: Mappable {
     public var response: Response?
     public var saleData: SaleData?
     public var poiData: POIData?
-    public var paymentInstrument: PaymentInstrumentData?
+    public var paymentInstrumentData: PaymentInstrumentData?
     
     public required init?(map: Map) {}
     public required init(){}
@@ -21,7 +21,7 @@ public class CardAcquisitionResponse: Mappable {
         response        <-      map["Response"]
         saleData        <-      map["SaleData"]
         poiData         <-      map["POIData"]
-        paymentInstrument  <-   map["PaymentInstrumentData"]
+        paymentInstrumentData  <-   map["PaymentInstrumentData"]
     }
 }
 

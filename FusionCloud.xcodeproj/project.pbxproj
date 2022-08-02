@@ -23,7 +23,7 @@
 		D615D6672839FBA4004A1772 /* PaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6502839FBA4004A1772 /* PaymentRequest.swift */; };
 		D615D6682839FBA4004A1772 /* TransactionStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */; };
 		D615D6692839FBA4004A1772 /* CardAcquisitionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */; };
-		D615D66A2839FBA4004A1772 /* SalePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6532839FBA4004A1772 /* SalePOI.swift */; };
+		D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6532839FBA4004A1772 /* SaleToPOI.swift */; };
 		D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6542839FBA4004A1772 /* MessageHeader.swift */; };
 		D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6562839FBA4004A1772 /* Crypto.swift */; };
 		D615D66D2839FBA4004A1772 /* GlobalSign.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6572839FBA4004A1772 /* GlobalSign.cer */; };
@@ -39,7 +39,7 @@
 		D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */; };
 		D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABD28451104001D123C /* LogoutRequest.swift */; };
 		D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABF2845117B001D123C /* LogoutResponse.swift */; };
-		D67D0CD82883D39E00B7003C /* SalePOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */; };
+		D67D0CD82883D39E00B7003C /* SaleToPOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */; };
 		D68F217428294B5200BC809A /* FusionCloud.docc in Sources */ = {isa = PBXBuildFile; fileRef = D68F217328294B5200BC809A /* FusionCloud.docc */; };
 		D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F217E28294B5200BC809A /* FusionCloudTests.swift */; };
 		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,7 +76,7 @@
 		D615D6502839FBA4004A1772 /* PaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRequest.swift; sourceTree = "<group>"; };
 		D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusRequest.swift; sourceTree = "<group>"; };
 		D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAcquisitionRequest.swift; sourceTree = "<group>"; };
-		D615D6532839FBA4004A1772 /* SalePOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOI.swift; sourceTree = "<group>"; };
+		D615D6532839FBA4004A1772 /* SaleToPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOI.swift; sourceTree = "<group>"; };
 		D615D6542839FBA4004A1772 /* MessageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
 		D615D6562839FBA4004A1772 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		D615D6572839FBA4004A1772 /* GlobalSign.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlobalSign.cer; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		D6712ABD28451104001D123C /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		D6712ABF2845117B001D123C /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		D67B727D2831140A0032052F /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePOIRequest.swift; sourceTree = "<group>"; };
+		D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleToPOIRequest.swift; sourceTree = "<group>"; };
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F217328294B5200BC809A /* FusionCloud.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FusionCloud.docc; sourceTree = "<group>"; };
 		D68F217E28294B5200BC809A /* FusionCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloudTests.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			children = (
 				D615D6422839FBA4004A1772 /* Response */,
 				D615D6472839FBA4004A1772 /* Request */,
-				D615D6532839FBA4004A1772 /* SalePOI.swift */,
+				D615D6532839FBA4004A1772 /* SaleToPOI.swift */,
 				D615D6542839FBA4004A1772 /* MessageHeader.swift */,
 				D615D6462839FBA4004A1772 /* SecurityTrailer.swift */,
 			);
@@ -185,7 +185,7 @@
 				D615D6512839FBA4004A1772 /* TransactionStatusRequest.swift */,
 				D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */,
 				D6712ABD28451104001D123C /* LogoutRequest.swift */,
-				D67D0CD72883D39E00B7003C /* SalePOIRequest.swift */,
+				D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -296,10 +296,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					D68F216E28294B5200BC809A = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1340;
 					};
 					D68F217828294B5200BC809A = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -424,7 +425,7 @@
 				D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */,
 				D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */,
 				D6712AB42844EE00001D123C /* InputResponse.swift in Sources */,
-				D615D66A2839FBA4004A1772 /* SalePOI.swift in Sources */,
+				D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */,
 				D68F217428294B5200BC809A /* FusionCloud.docc in Sources */,
 				D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */,
 				D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */,
@@ -443,7 +444,7 @@
 				D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */,
 				D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */,
 				D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */,
-				D67D0CD82883D39E00B7003C /* SalePOIRequest.swift in Sources */,
+				D67D0CD82883D39E00B7003C /* SaleToPOIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,13 +591,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -611,9 +613,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -622,13 +625,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -642,9 +646,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

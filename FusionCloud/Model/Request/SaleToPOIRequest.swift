@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class SalePOIRequest : Mappable{
+public class SaleToPOIRequest : Mappable {
     
     public var messageHeader: MessageHeader?
     public var loginRequest: LoginRequest?
@@ -23,6 +23,5 @@ public class SalePOIRequest : Mappable{
         loginRequest    <- map["LoginRequest"]
         displayRequest  <-  map["DisplayRequest"]
         securityTrailer <- map["SecurityTrailer"]
-        
     }
 }

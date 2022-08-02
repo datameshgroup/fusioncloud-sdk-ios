@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-public class SalePOI : Mappable{
+public class SaleToPOI : Mappable{
    
-    public var salePOIResponse: SalePOIResponse?
-    public var salePOIRequest: SalePOIRequest?
+    public var saleToPOIResponse: SaleToPOIResponse?
+    public var saleToPOIRequest: SaleToPOIRequest?
     public required init?(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
-          salePOIResponse <- map["SaleToPOIResponse"]
-          salePOIRequest <- map["SaleToPOIRequest"]
+          saleToPOIResponse <- map["SaleToPOIResponse"]
+          saleToPOIRequest <- map["SaleToPOIRequest"]
     }
 }

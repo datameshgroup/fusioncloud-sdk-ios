@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class SalePOIResponse: Mappable {
+public class SaleToPOIResponse: Mappable {
     
     public var messageheader: MessageHeader?
     public var loginResponse: LoginResponse?
@@ -18,7 +18,7 @@ public class SalePOIResponse: Mappable {
     public var paymentResponse: PaymentResponse?
     public var inputResponse: InputResponse?
     public var abortResponse: EventNotification?
-    public var transactionStatus: TransactionStatusResponse?
+    public var transactionStatusResponse: TransactionStatusResponse?
     public var printResponse: PrintResponse?
     public var reconResponse: ReconciliationResponse?
     public var logoutResponse: LogoutResponse?
@@ -31,7 +31,7 @@ public class SalePOIResponse: Mappable {
         paymentResponse     <-  map["PaymentResponse"]
         inputResponse       <-  map["InputResponse"]
         abortResponse       <-  map["EventNotification"]
-        transactionStatus   <-  map["TransactionStatusResponse"]
+        transactionStatusResponse   <-  map["TransactionStatusResponse"]
         printResponse       <-  map["PrintResponse"]
         reconResponse       <-  map["ReconciliationResponse"]
         logoutResponse      <-  map["LogoutResponse"]
