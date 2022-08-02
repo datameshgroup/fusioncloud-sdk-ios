@@ -31,8 +31,7 @@ public class InputData : Mappable {
     var maxInputTime: String?
     var minLength: String?
     var maxLength: String?
-    var maxCharacterFlag: String?
-    var maskCharFlag: String?
+    var maskCharactersFlag: String?
     
     public required init?(map: Map) {}
     public required init(){}
@@ -43,7 +42,7 @@ public class InputData : Mappable {
         maxInputTime    <-  map["MaxInputTime"]
         minLength       <-  map["MinLength"]
         maxLength       <-  map["MaxLength"]
-        maskCharFlag    <-  map["MaskCharactersFlag"]
+        maskCharactersFlag    <-  map["MaskCharactersFlag"]
     }
 }
 

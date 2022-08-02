@@ -10,16 +10,16 @@ import ObjectMapper
 
 public class ReconciliationResponse: Mappable {
     
-    var reconType: String?
-    var poiReconId: String?
+    var reconciliationType: String?
+    var poiReconciliationID: String?
     var response: Response?
     var transactionTotals: [TransactionTotal]?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        reconType           <-      map["ReconciliationType"]
-        poiReconId          <-      map["POIReconciliationID"]
+        reconciliationType           <-      map["ReconciliationType"]
+        poiReconciliationID          <-      map["POIReconciliationID"]
         response            <-      map["Response"]
         transactionTotals   <-      map["PaymentTotals"]
     }
@@ -27,11 +27,11 @@ public class ReconciliationResponse: Mappable {
 
 public class TransactionTotal: Mappable {
     
-    var paymentTotal: [PaymentTotal]?
+    var paymentTotals: [PaymentTotal]?
     var paymentInstrumentType: String?
     var cardBrand: String?
     var shiftNumber: String?
-    var totalGroupId: String?
+    var totalsGroupID: String?
     var paymentCurrency: String?
     
     public required init?(map: Map) {}
@@ -39,9 +39,9 @@ public class TransactionTotal: Mappable {
     public func mapping(map: Map) {
         paymentInstrumentType   <-  map["PaymentInstrumentType"]
         cardBrand               <-  map["CardBrand"]
-        paymentTotal            <-  map["PaymentTotals"]
+        paymentTotals            <-  map["PaymentTotals"]
         shiftNumber             <-  map["ShiftNumber"]
-        totalGroupId            <-  map["TotalsGroupID"]
+        totalsGroupID            <-  map["TotalsGroupID"]
         paymentCurrency         <-  map["PaymentCurrency"]
     }
 }
@@ -52,17 +52,17 @@ public class PaymentTotal: Mappable {
     
     public var transactionType: String?
     public var transactionCount: String?
-    public var transactionAmnt: String?
+    public var transactionAmount: String?
     public var tipAmount: String?
-    public var surgeAmount: String?
+    public var surchargeAmount: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         transactionType     <-      map["TransactionType"]
         transactionCount    <-      map["TransactionCount"]
-        transactionAmnt     <-      map["TransactionAmount"]
+        transactionAmount     <-      map["TransactionAmount"]
         tipAmount           <-      map["TipAmount"]
-        surgeAmount         <-      map["SurchargeAmount"]
+        surchargeAmount         <-      map["SurchargeAmount"]
     }
 }

@@ -13,14 +13,14 @@ import ObjectMapper
 public class EventNotification: Mappable {
     
     public var timeStamp: String?
-    public var eventNotify: String?
+    public var eventToNotify: String?
     public var eventDetails: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         timeStamp       <-  map["TimeStamp"]
-        eventNotify     <-  map["EventToNotify"]
+        eventToNotify     <-  map["EventToNotify"]
         eventDetails    <-  map["EventDetails"]
     }
 }

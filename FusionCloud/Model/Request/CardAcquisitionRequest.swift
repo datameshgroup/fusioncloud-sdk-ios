@@ -11,25 +11,25 @@ import ObjectMapper
 public class CardAcquisitionRequest: Mappable {
     
     public var saleData: SaleData?
-    public var cardAcquisitionTrans: CardAcquisitionTrans?
+    public var cardAcquisitionTransaction: CardAcquisitionTransaction?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         saleData                <-  map["SaleData"]
-        cardAcquisitionTrans    <-  map["CardAcquisitionTransaction"]
+        cardAcquisitionTransaction    <-  map["CardAcquisitionTransaction"]
     }
 }
 
-public class CardAcquisitionTrans: Mappable {
+public class CardAcquisitionTransaction: Mappable {
     
-    public var allowedPaymentBrnd: [String]?
+    public var allowedPaymentBrand: [String]?
     public var forceEntryMode: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        allowedPaymentBrnd      <-  map["AllowedPaymentBrand"]
+        allowedPaymentBrand      <-  map["AllowedPaymentBrand"]
         forceEntryMode          <-  map["ForceEntryMode"]
     }
 }

@@ -9,15 +9,15 @@
 import Foundation
 import ObjectMapper
 
-public class MessageHeader : Mappable{
+public class MessageHeader : Mappable {
     
         public var messageClass: String?
         public var messageCategory: String?
         public var messageType: String?
-        public var serviceId: String?
+        public var serviceID: String?
         public var protocolVersion: String?
-        public var saleId: String?
-        public var poiId: String?
+        public var saleID: String?
+        public var poiID: String?
     
     
     public required init?(map: Map) {}
@@ -28,9 +28,9 @@ public class MessageHeader : Mappable{
          messageClass           <- map["MessageClass"]
          messageCategory        <- map["MessageCategory"]
          messageType            <- map["MessageType"]
-         serviceId              <- map["ServiceID"]
-         saleId                 <- map["SaleID"]
-         poiId                  <- map["POIID"]
+         serviceID              <- map["ServiceID"]
+         saleID                 <- map["SaleID"]
+         poiID                  <- map["POIID"]
      }
     
 }

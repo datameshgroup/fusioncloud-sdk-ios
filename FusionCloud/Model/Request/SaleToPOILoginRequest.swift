@@ -7,10 +7,11 @@
 //
 
 import Foundation
+
 import ObjectMapper
 
 public class SaleToPOILoginRequest: Mappable {
-    public var saleToPOIRequest: SalePOIRequest?
+    public var saleToPOIRequest: SaleToPOIRequest?
     public required init?(map: Map) {}
     
     public required init(){
