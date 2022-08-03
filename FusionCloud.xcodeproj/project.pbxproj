@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0074FFE6FBCCB8201CCFB841 /* Pods_FusionCloud_FusionCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */; };
-		5A5DED1DCC5E80775535E7E0 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */; };
+		722703B607718FF9E919ED50 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837399A89B217DF351E69A0D /* Pods_FusionCloud.framework */; };
 		D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6432839FBA4004A1772 /* PaymentResponse.swift */; };
 		D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6442839FBA4004A1772 /* LoginResponse.swift */; };
 		D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6452839FBA4004A1772 /* SalePOIResponse.swift */; };
@@ -40,8 +39,6 @@
 		D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABD28451104001D123C /* LogoutRequest.swift */; };
 		D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712ABF2845117B001D123C /* LogoutResponse.swift */; };
 		D67D0CD82883D39E00B7003C /* SaleToPOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */; };
-		D68F217428294B5200BC809A /* FusionCloud.docc in Sources */ = {isa = PBXBuildFile; fileRef = D68F217328294B5200BC809A /* FusionCloud.docc */; };
-		D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F217E28294B5200BC809A /* FusionCloudTests.swift */; };
 		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D68F218A28294C7700BC809A /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F218928294C7700BC809A /* TestClass.swift */; };
 /* End PBXBuildFile section */
@@ -57,11 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud_FusionCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud-FusionCloudTests.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests.debug.xcconfig"; sourceTree = "<group>"; };
+		837399A89B217DF351E69A0D /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
-		94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud-FusionCloudTests.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests.release.xcconfig"; sourceTree = "<group>"; };
-		CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D615D6432839FBA4004A1772 /* PaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		D615D6442839FBA4004A1772 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		D615D6452839FBA4004A1772 /* SalePOIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOIResponse.swift; sourceTree = "<group>"; };
@@ -92,11 +87,8 @@
 		D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAcquisitionResponse.swift; sourceTree = "<group>"; };
 		D6712ABD28451104001D123C /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		D6712ABF2845117B001D123C /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
-		D67B727D2831140A0032052F /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleToPOIRequest.swift; sourceTree = "<group>"; };
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
-		D68F217328294B5200BC809A /* FusionCloud.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FusionCloud.docc; sourceTree = "<group>"; };
-		D68F217E28294B5200BC809A /* FusionCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloudTests.swift; sourceTree = "<group>"; };
 		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5DED1DCC5E80775535E7E0 /* Pods_FusionCloud.framework in Frameworks */,
+				722703B607718FF9E919ED50 /* Pods_FusionCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0074FFE6FBCCB8201CCFB841 /* Pods_FusionCloud_FusionCloudTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +118,6 @@
 			children = (
 				8C7F147E52581204FC03E1E4 /* Pods-FusionCloud.debug.xcconfig */,
 				DD8991190DF15BF586EEF195 /* Pods-FusionCloud.release.xcconfig */,
-				79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */,
-				94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -136,8 +125,7 @@
 		724F2F26FE2A0B8C2BC68D02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CAF96BAAB63CBCF7BB171A62 /* Pods_FusionCloud.framework */,
-				51B02417F45175DF85A45273 /* Pods_FusionCloud_FusionCloudTests.framework */,
+				837399A89B217DF351E69A0D /* Pods_FusionCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,11 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				D68F217128294B5200BC809A /* FusionCloud */,
-				D68F217D28294B5200BC809A /* FusionCloudTests */,
 				D68F21A52829561100BC809A /* FusionCloud.framework */,
-				D67B727D2831140A0032052F /* FusionCloudTests.xctest */,
 				0A4DD0407C91046B8157D561 /* Pods */,
 				724F2F26FE2A0B8C2BC68D02 /* Frameworks */,
+				ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,18 +208,9 @@
 				D615D6412839FBA4004A1772 /* Model */,
 				D615D6552839FBA4004A1772 /* Utility */,
 				D68F217228294B5200BC809A /* FusionCloud.h */,
-				D68F217328294B5200BC809A /* FusionCloud.docc */,
 				D68F218928294C7700BC809A /* TestClass.swift */,
 			);
 			path = FusionCloud;
-			sourceTree = "<group>";
-		};
-		D68F217D28294B5200BC809A /* FusionCloudTests */ = {
-			isa = PBXGroup;
-			children = (
-				D68F217E28294B5200BC809A /* FusionCloudTests.swift */,
-			);
-			path = FusionCloudTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +254,7 @@
 				D68F217528294B5200BC809A /* Sources */,
 				D68F217628294B5200BC809A /* Frameworks */,
 				D68F217728294B5200BC809A /* Resources */,
-				9A0AE6CBE70906944F72AA34 /* [CP] Embed Pods Frameworks */,
+				0A743E89D479AE51EEEB8D2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,7 +263,7 @@
 			);
 			name = FusionCloudTests;
 			productName = FusionCloudTests;
-			productReference = D67B727D2831140A0032052F /* FusionCloudTests.xctest */;
+			productReference = ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -347,6 +325,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A743E89D479AE51EEEB8D2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1630C4A04129FF08AAD10D14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,23 +386,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9A0AE6CBE70906944F72AA34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FusionCloud-FusionCloudTests/Pods-FusionCloud-FusionCloudTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -426,7 +404,6 @@
 				D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */,
 				D6712AB42844EE00001D123C /* InputResponse.swift in Sources */,
 				D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */,
-				D68F217428294B5200BC809A /* FusionCloud.docc in Sources */,
 				D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */,
 				D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */,
 				D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */,
@@ -452,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D68F217F28294B5200BC809A /* FusionCloudTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -575,7 +551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -602,7 +578,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,7 +612,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,7 +632,6 @@
 		};
 		D68F218728294B5200BC809A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79B74284EBD1B60DFC513B7A /* Pods-FusionCloud-FusionCloudTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -673,7 +648,6 @@
 		};
 		D68F218828294B5200BC809A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94048A4828E8C9BEE0C8404E /* Pods-FusionCloud-FusionCloudTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
