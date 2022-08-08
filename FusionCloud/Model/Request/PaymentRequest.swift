@@ -125,7 +125,7 @@ public class AmountsReq: Mappable {
     currency <- map["Currency"]
     requestedAmount <- (map["RequestedAmount"], NSDecimalNumberTransform())
     cashBackAmount <- (map["CashBackAmount"], NSDecimalNumberTransform())
-    tipAmount <- (map["tipAmount"], NSDecimalNumberTransform())
+    tipAmount <- (map["TipAmount"], NSDecimalNumberTransform())
     surchargeAmount <- (map["surchargeAmount"], NSDecimalNumberTransform())
     paidAmount <- (map["paidAmount"], NSDecimalNumberTransform())
   }

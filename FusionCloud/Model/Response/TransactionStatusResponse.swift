@@ -4,7 +4,6 @@
 //
 //  Created by Loey Agdan on 5/30/22.
 //
-
 import Foundation
 import ObjectMapper
 
@@ -27,8 +26,23 @@ public class TransactionStatusResponse: Mappable {
 }
 
 public class RepeatedMessageResponse: Mappable {
+    
+    public var repeatedResponseMessageBody: RepeatedResponseMessageBody?
+    
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
+        repeatedResponseMessageBody  <-  map["RepeatedResponseMessageBody"]
+    }
+}
+
+public class RepeatedResponseMessageBody: Mappable {
+    public var paymentResponse: PaymentResponse?
+    
+    public required init?(map: Map) {}
+    public required init(){}
+    public func mapping(map: Map) {
+        paymentResponse  <-  map["PaymentResponse"]
+        
     }
 }
