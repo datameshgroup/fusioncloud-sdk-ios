@@ -64,12 +64,14 @@ public class POIData: Mappable {
     
     public var poiReconciliationID: String?
     public var poiTransactionID: POITransactionID?
+    public var allowedProductCodes: [String]?
     
     public init(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
         poiTransactionID      <-  map["POITransactionID"]
         poiReconciliationID   <-  map["POIReconciliationID"]
+        allowedProductCodes   <-  map["AllowedProductCodes"]
     }
 }
 

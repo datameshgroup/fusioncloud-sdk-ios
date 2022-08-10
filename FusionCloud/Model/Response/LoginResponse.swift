@@ -50,12 +50,14 @@ public class Response : Mappable {
 public class POISystemData : Mappable {
     
     public var dateTime: String?
+    public var poiSoftware: POISoftware?
     public var poiTerminalData: POITerminalData?
     public var poiStatus: POIStatus?
     public var tokenRequestStatus: Bool?
     
     public func mapping(map: Map) {
         dateTime            <-  map["DateTime"]
+        poiSoftware         <-  map["POISoftware"]
         poiTerminalData     <-  map["POITerminalData"]
         poiStatus           <-  map["POIStatus"]
         tokenRequestStatus  <-  map["TokenRequestStatus"]
@@ -63,6 +65,22 @@ public class POISystemData : Mappable {
     
     public required init?(map: Map) {}
     public required init(){}
+}
+
+public class POISoftware : Mappable {
+    var providerIdentification: String?
+    var applicationName: String?
+    var softwareVersion: String?
+    
+    public func mapping(map: Map) {
+    providerIdentification <- map["ProviderIdentification"]
+    applicationName <- map["ApplicationName"]
+    softwareVersion <- map["SoftwareVersion"]
+    }
+    
+    public required init?(map: Map) {}
+    public required init(){}
+    
 }
 
     public class POITerminalData : Mappable {

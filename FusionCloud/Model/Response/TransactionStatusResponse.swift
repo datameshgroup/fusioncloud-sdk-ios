@@ -28,10 +28,12 @@ public class TransactionStatusResponse: Mappable {
 public class RepeatedMessageResponse: Mappable {
     
     public var repeatedResponseMessageBody: RepeatedResponseMessageBody?
+    public var messageHeader: MessageHeader?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
+        messageHeader                <- map["MessageHeader"]
         repeatedResponseMessageBody  <-  map["RepeatedResponseMessageBody"]
     }
 }
