@@ -9,7 +9,7 @@ public class PaymentRequest: Mappable {
 
   public func mapping(map: Map) {
     saleData <- map["SaleData"]
-      paymentTransaction <- map["PaymentTransaction"]
+    paymentTransaction <- map["PaymentTransaction"]
     paymentData <- map["PaymentData"]
   }
 
