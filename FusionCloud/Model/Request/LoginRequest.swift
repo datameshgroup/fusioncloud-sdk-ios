@@ -17,6 +17,8 @@ public class LoginRequest: Mappable{
     public var trainingModeFlag: Bool?
     public var operatorLanguage: String?
     public var operatorID: String?
+    public var shiftNumber: String?
+    public var pOISerialNumber: String?
     
     public required init?(map: Map) {}
     public required init(){}
@@ -27,6 +29,8 @@ public class LoginRequest: Mappable{
         trainingModeFlag    <- map["TrainingModeFlag"]
         operatorLanguage    <- map["OperatorLanguage"]
         operatorID          <- map["OperatorID"]
+        shiftNumber         <- map["ShiftNumber"]
+        pOISerialNumber     <- map["POISerialNumber"]
     }
     
 }
