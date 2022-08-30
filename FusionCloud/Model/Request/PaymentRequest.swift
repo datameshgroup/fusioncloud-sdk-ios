@@ -51,7 +51,7 @@ public class SaleTransactionID: Mappable {
 
   public func mapping(map: Map) {
       transactionID <- map["TransactionID"]
-    timeStamp <- (map["TimeStamp"], ISO8601DateTransform())
+      timeStamp <- (map["TimeStamp"], ISO8601DateTransform())
   }
 
   public required init?(map: Map) {}
@@ -65,6 +65,7 @@ public class SaleTransactionID: Mappable {
 public class PaymentData: Mappable {
 
   public var paymentType: String?
+  public var paymentInstrumentData: PaymentInstrumentData?
 
   public func mapping(map: Map) {
     paymentType <- map["PaymentType"]
@@ -86,6 +87,7 @@ public class PaymentTransaction: Mappable {
     public var amountsReq: AmountsReq?
     public var origionalPOITransaction: OrigionalPOITransaction?
     public var saleItem: [SaleItem]?
+    public var transactionConditions: TransactionConditions?
 
   public func mapping(map: Map) {
     amountsReq <- map["AmountsReq"]
@@ -94,6 +96,25 @@ public class PaymentTransaction: Mappable {
 
   public required init?(map: Map) {}
   public required init() {}
+}
+
+public class TransactionConditions: Mappable {
+    public var allowedPaymentBrands: [String]?
+    public var acquirerID: [String]?
+    public var debitPreferredFlag: Bool?
+    public var forceOnlineFlag: Bool?
+    public var merchantCategoryCode: String?
+    
+    public func mapping(map: Map) {
+        allowedPaymentBrands <- map["AllowedPaymentBrands"]
+        acquirerID           <- map["AcquirerID"]
+        debitPreferredFlag   <- map["DebitPreferredFlag"]
+        forceOnlineFlag      <- map["ForceOnlineFlag"]
+        merchantCategoryCode <- map["MerchantCategoryCode"]
+    }
+    
+    public required init?(map: Map) {}
+    public required init() {}
 }
 
 public class OrigionalPOITransaction: Mappable {
@@ -138,18 +159,58 @@ public class SaleItem: Mappable {
 
   public var itemID: Int64?
   public var productCode: String?
-  public var unitMeasure: String?
+  public var eanUpc: String?
+  public var unitOfMeasure: String?
   public var quantity: NSDecimalNumber?
   public var unitPrice: NSDecimalNumber?
+  public var itemAmount: NSDecimalNumber?
+  public var taxCode: String?
+  public var saleChannel: String?
   public var productLabel: String?
+  public var additionalProductInfo: String?
+  public var parentItemID: Int64?
+  public var costBase: NSDecimalNumber?
+  public var discount: NSDecimalNumber?
+  public var categories: [String]?
+  public var brand: String?
+  public var quantityInStock: NSDecimalNumber?
+  public var tags: [String]?
+  public var restricted: Bool?
+  public var pageURL: String?
+  public var imageURLs:[String]?
+  public var style: String?
+  public var size: String?
+  public var colour: String?
+  public var weight: NSDecimalNumber?
+  public var weightUnitOfMeasure: String?
 
   public func mapping(map: Map) {
-    itemID <- map["ItemID"]
-    productCode <- map["ProductCode"]
-    unitMeasure <- map["UnitOfMeasure"]
-    quantity <- (map["Quantity"], NSDecimalNumberTransform())
-    unitPrice <- (map["UnitPrice"], NSDecimalNumberTransform())
-    productLabel <- map["ProductLabel"]
+    itemID                  <- map["ItemID"]
+    productCode             <- map["ProductCode"]
+    eanUpc                  <- map["EanUpc"]
+    unitOfMeasure           <- map["UnitOfMeasure"]
+    quantity                <- (map["Quantity"], NSDecimalNumberTransform())
+    unitPrice               <- (map["UnitPrice"], NSDecimalNumberTransform())
+    itemAmount              <- (map["ItemAmount"],NSDecimalNumberTransform())
+    taxCode                 <- map["TaxCode"]
+    saleChannel             <- map["SaleChannel"]
+    productLabel            <- map["ProductLabel"]
+    additionalProductInfo   <- map["AdditionalProductInfo"]
+    parentItemID            <- map["ParentItemID"]
+    costBase                <- (map["CostBase"],NSDecimalNumberTransform())
+    discount                <- (map["Discount"],NSDecimalNumberTransform())
+    categories              <- map["Categories"]
+    brand                   <- map["Brand"]
+    quantityInStock         <- (map["QuantityInStock"],NSDecimalNumberTransform())
+    tags                    <- map["Tags"]
+    restricted              <- map["Restricted"]
+    pageURL                 <- map["PageURL"]
+    imageURLs               <- map["ImageURLs"]
+    style                   <- map["Style"]
+    size                    <- map["Size"]
+    colour                  <- map["Colour"]
+    weight                  <- (map["Weight"],NSDecimalNumberTransform())
+    weightUnitOfMeasure     <- map["WeightUnitOfMeasure"]
   }
 
   public required init?(map: Map) {}

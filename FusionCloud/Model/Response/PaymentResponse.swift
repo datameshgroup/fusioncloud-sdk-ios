@@ -111,8 +111,8 @@ public class AmountsResp: Mappable {
         
     public var currency: String?
     public var authorizedAmount: NSDecimalNumber?
-    public var totalFeeAmount: NSDecimalNumber?
-    public var cashbackAmount: NSDecimalNumber?
+    public var totalFeesAmount: NSDecimalNumber?
+    public var cashBackAmount: NSDecimalNumber?
     public var tipAmount: NSDecimalNumber?
     public var surchargeAmount: NSDecimalNumber?
     public var partialAuthorizedAmount: NSDecimalNumber?
@@ -122,8 +122,8 @@ public class AmountsResp: Mappable {
     public func mapping(map: Map) {
         currency            <-      map["Currency"]
         authorizedAmount    <-      (map["AuthorizedAmount"], NSDecimalNumberTransform())
-        totalFeeAmount      <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
-        cashbackAmount      <-      (map["CashBackAmount"], NSDecimalNumberTransform())
+        totalFeesAmount      <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
+        cashBackAmount      <-      (map["CashBackAmount"], NSDecimalNumberTransform())
         tipAmount           <-      (map["TipAmount"], NSDecimalNumberTransform())
         surchargeAmount     <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
         partialAuthorizedAmount <-  (map["PartialAuthorizedAmount"], NSDecimalNumberTransform())
@@ -199,7 +199,7 @@ public class AmountsResp: Mappable {
         public func mapping(map: Map) {
             tokenRequestType        <-      map["TokenRequestedType"]
             tokenValue              <-      map["TokenValue"]
-            expiryDateTime              <-      map["ExpiryDateTime"]
+            expiryDateTime          <-      map["ExpiryDateTime"]
         }
     }
 
@@ -208,7 +208,8 @@ public class AmountsResp: Mappable {
         /// RFID, Keyed, Manual, File, Scanned, MagStripe, ICC, SynchronousICC, Tapped, Contactless, Mobile
         public var entryMode: String?
         public var paymentBrand: String?
-        public var maskPan: String?
+        public var maskedPan: String?
+        public var account: String? ///Present if  EntryMode is "MagStripe", "ICC", or "Tapped"
         public var paymentToken: PaymentToken?
         
         public required init(){}
@@ -216,7 +217,8 @@ public class AmountsResp: Mappable {
         public func mapping(map: Map) {
             entryMode       <- map["EntryMode"]
             paymentBrand    <- map["PaymentBrand"]
-            maskPan         <- map["MaskedPAN"]
+            maskedPan       <- map["MaskedPAN"]
+            account         <- map["Account"]
             paymentToken    <- map["PaymentToken"]
         }
     }
