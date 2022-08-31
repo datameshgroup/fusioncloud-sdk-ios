@@ -11,9 +11,7 @@ public protocol FusionCloudDelegate {
     func dataReceive(response: String)
 }
 
-public class FusionCloudConfig {
-
-    public var testEnvironment: Bool?
+public class FusionCloudConfig{
     public var serverDomain: String?
     public var kekValue: String?
     public var keyIdentifier: String?
@@ -22,79 +20,24 @@ public class FusionCloudConfig {
     public var applicationName: String?
     public var softwareVersion: String?
     public var certificationCode: String?
-    public var saleID: String?
-    public var poiID: String?
-    public var messageHeader: MessageHeader?
-    public var securityTrailer: SecurityTrailer?
+    public var saleID: String!
+    public var poiID: String!
+    public var testEnvironment: Bool
     
-    public required init() {}
-    
-    public func initConfig(testEnvironment: Bool, providerIdentification: String, applicationName: String, softwareVersion: String, certificationCode: String, saleID: String, poiID: String, kekValue: String) {
+    public required init(testEnvironmentui: Bool?) {
+        testEnvironment = testEnvironmentui ?? true
         
-        self.testEnvironment = testEnvironment;
-        self.providerIdentification = providerIdentification
-        self.applicationName = applicationName
-        self.softwareVersion = softwareVersion
-        self.certificationCode = certificationCode
-        self.saleID = saleID
-        self.poiID = poiID
-        self.kekValue = kekValue
-        self.serverDomain = testEnvironment ? "wss://www.cloudposintegration.io/nexodev" : "wss://prod1.datameshgroup.io:5000"
+        self.providerIdentification = testEnvironment ? "Company A" : "H_L"
+        self.applicationName = testEnvironment ? "POS Retail" : "Exceed"
+        self.softwareVersion = testEnvironment ? "01.00.00" : "9.0.0.0"
+        self.certificationCode = testEnvironment ? "98cf9dfc-0db7-4a92-8b8cb66d4d2d7169" : "01c99f18-7093-4d77-b6f6-2c762c8ed698"
+        
+        self.kekValue = testEnvironment ? "44DACB2A22A4A752ADC1BBFFE6CEFB589451E0FFD83F8B21" : "ba92ab29e9918943167325f4ea1f5d9b5ee679ea89a82f2c"
+        self.serverDomain = testEnvironment ? "wss://www.cloudposintegration.io/nexodev" : "wss://www.prod1.datameshgroup.io:5000"
         self.keyIdentifier = testEnvironment ? "SpecV2TestMACKey" : "SpecV2ProdMACKey"
         self.keyVersion = testEnvironment ? "20191122164326" : "20191122164326"
-
-        createDefaultHeader()
-        createDefaultSecurityTrailer()
+        self.poiID = "POI ID";
+        self.saleID = "SALE ID";
     }
     
-    // Creates a default MessageHeader based on the configured saleId and poiId
-    public func createDefaultHeader() {
-        messageHeader = MessageHeader()
-        messageHeader!.protocolVersion = "3.1-dmg"
-        messageHeader!.messageClass = "Service"
-        messageHeader!.messageType = "Request"
-        messageHeader!.saleID = self.saleID
-        messageHeader!.poiID = self.poiID
-    }
-    
-    // Creates a default MessageHeader based on the configured KEK
-    public func createDefaultSecurityTrailer() {
-        securityTrailer = SecurityTrailer()
-        securityTrailer!.contentType = "id-ct-authData"
-        
-        let authenticatedData = AuthenticationData()
-            authenticatedData.version = "v0"
-            let recipient = Recipient()
-                let KEK = KEK()
-                    KEK.version = "v4"
-                        
-                    //inside kek
-                    let kekIdentifier = KEKIdentifier()
-                        kekIdentifier.keyIdentifier = self.keyIdentifier!
-                        kekIdentifier.keyVersion = self.keyVersion!
-                    
-                    let keyEncryptionAlgorithm = KeyEncryptionAlgorithm()
-                        keyEncryptionAlgorithm.algorithm = "des-ede3-cbc"
-        
-                    KEK.kekIdentifier = kekIdentifier
-                    KEK.kekAlgorithm = keyEncryptionAlgorithm
-                    KEK.encryptedKey = ""//encryptedString
-                    
-                //inside receipient
-                let macAlgorithm = MACAlgorithm()
-                    macAlgorithm.algorithm = "id-retail-cbc-mac-sha-256"
-                
-                let encapsulatedContent = EncapsulatedContent()
-                    encapsulatedContent.contentType = "id-data"
-        
-            recipient.kek = KEK
-            recipient.macAlgorithm = macAlgorithm
-            recipient.encapContent = encapsulatedContent
-            recipient.mac = ""//MAC
-        
-        authenticatedData.recipient = recipient
-        securityTrailer!.authenticationData = authenticatedData
-    }
-    
-
 }

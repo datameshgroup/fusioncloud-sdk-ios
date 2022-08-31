@@ -16,8 +16,8 @@ public class MessageHeader : Mappable {
         public var messageType: String?
         public var serviceID: String?
         public var protocolVersion: String?
-        public var saleID: String?
-        public var poiID: String?
+        public var saleID: String!
+        public var poiID: String!
     
     
     public required init?(map: Map) {}

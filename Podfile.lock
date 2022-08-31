@@ -1,20 +1,28 @@
 PODS:
+  - Alamofire (5.3.0)
   - IDZSwiftCommonCrypto (0.13.0)
   - ObjectMapper (4.2.0)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.3.0)
   - IDZSwiftCommonCrypto (~> 0.13)
   - ObjectMapper (~> 4)
+  - Starscream (~> 4.0.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IDZSwiftCommonCrypto
     - ObjectMapper
+    - Starscream
 
 SPEC CHECKSUMS:
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   IDZSwiftCommonCrypto: 00dd37cdfbd149312a7e5a582cf9909f8b129f44
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: ddcb19090374a95884021f8904824e1cc86c1a91
+PODFILE CHECKSUM: 3af076f488542243fd8490f68649589d95947ca5
 
 COCOAPODS: 1.11.3
