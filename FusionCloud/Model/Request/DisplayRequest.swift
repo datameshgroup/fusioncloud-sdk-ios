@@ -75,6 +75,7 @@ public class DisplayOutput: Mappable {
         
         ///TODO:
         ///public func GetContentAsPlainText() -> STring  {}
+        ///
     }
 
         public class OutputText: Mappable {
@@ -87,3 +88,6 @@ public class DisplayOutput: Mappable {
             public required init?(map: Map) {}
             public required init(){}
         }
+
+
+

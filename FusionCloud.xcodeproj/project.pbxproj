@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0475F797B17CA9852B96B49C /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01607CB58CA72923BA8D1BB /* Pods_FusionCloud.framework */; };
+		AB87727828B4A22100D62897 /* FusionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87727728B4A22100D62897 /* FusionClient.swift */; };
 		AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
+		C330450E5E0DE69619C3CC03 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35187690BDC65977C4DD6DB0 /* Pods_FusionCloud.framework */; };
 		D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6432839FBA4004A1772 /* PaymentResponse.swift */; };
 		D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6442839FBA4004A1772 /* LoginResponse.swift */; };
 		D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6452839FBA4004A1772 /* SalePOIResponse.swift */; };
@@ -26,9 +27,7 @@
 		D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6532839FBA4004A1772 /* SaleToPOI.swift */; };
 		D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6542839FBA4004A1772 /* MessageHeader.swift */; };
 		D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6562839FBA4004A1772 /* Crypto.swift */; };
-		D615D66D2839FBA4004A1772 /* GlobalSign.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6572839FBA4004A1772 /* GlobalSign.cer */; };
-		D615D66E2839FBA4004A1772 /* datamesh_public.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6582839FBA4004A1772 /* datamesh_public.cer */; };
-		D615D66F2839FBA4004A1772 /* USERTrust RSA Certification Authority.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */; };
+		D615D66F2839FBA4004A1772 /* dev.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6592839FBA4004A1772 /* dev.cer */; };
 		D615D6702839FBA4004A1772 /* SSLPinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */; };
 		D64E78162867537100E6CC46 /* FusionCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E78152867537100E6CC46 /* FusionCloud.swift */; };
 		D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB12844EDB8001D123C /* PrintResponse.swift */; };
@@ -54,8 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		397E8B56D15EA588CFA5C9A8 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
-		9B6A49FB9273E59B829AB5B4 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		0DAB855C277AC3ED313C4120 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		318261303DFF759178EA1BDC /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
+		35187690BDC65977C4DD6DB0 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB87727728B4A22100D62897 /* FusionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FusionClient.swift; path = client/FusionClient.swift; sourceTree = "<group>"; };
 		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D615D6432839FBA4004A1772 /* PaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		D615D6442839FBA4004A1772 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -74,9 +75,7 @@
 		D615D6532839FBA4004A1772 /* SaleToPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOI.swift; sourceTree = "<group>"; };
 		D615D6542839FBA4004A1772 /* MessageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
 		D615D6562839FBA4004A1772 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
-		D615D6572839FBA4004A1772 /* GlobalSign.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlobalSign.cer; sourceTree = "<group>"; };
-		D615D6582839FBA4004A1772 /* datamesh_public.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = datamesh_public.cer; sourceTree = "<group>"; };
-		D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "USERTrust RSA Certification Authority.cer"; sourceTree = "<group>"; };
+		D615D6592839FBA4004A1772 /* dev.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = dev.cer; sourceTree = "<group>"; };
 		D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinningManager.swift; sourceTree = "<group>"; };
 		D64E78152867537100E6CC46 /* FusionCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloud.swift; sourceTree = "<group>"; };
 		D6712AB12844EDB8001D123C /* PrintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintResponse.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F01607CB58CA72923BA8D1BB /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0475F797B17CA9852B96B49C /* Pods_FusionCloud.framework in Frameworks */,
+				C330450E5E0DE69619C3CC03 /* Pods_FusionCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,16 +114,16 @@
 		0A4DD0407C91046B8157D561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9B6A49FB9273E59B829AB5B4 /* Pods-FusionCloud.debug.xcconfig */,
-				397E8B56D15EA588CFA5C9A8 /* Pods-FusionCloud.release.xcconfig */,
+				0DAB855C277AC3ED313C4120 /* Pods-FusionCloud.debug.xcconfig */,
+				318261303DFF759178EA1BDC /* Pods-FusionCloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CB72A9BBB40D2A1EAFC1B4B3 /* Frameworks */ = {
+		A8878F7E7CF766CFE59FC9BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F01607CB58CA72923BA8D1BB /* Pods_FusionCloud.framework */,
+				35187690BDC65977C4DD6DB0 /* Pods_FusionCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +136,7 @@
 				D615D6532839FBA4004A1772 /* SaleToPOI.swift */,
 				D615D6542839FBA4004A1772 /* MessageHeader.swift */,
 				D615D6462839FBA4004A1772 /* SecurityTrailer.swift */,
+				AB87727728B4A22100D62897 /* FusionClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,9 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D615D6562839FBA4004A1772 /* Crypto.swift */,
-				D615D6572839FBA4004A1772 /* GlobalSign.cer */,
-				D615D6582839FBA4004A1772 /* datamesh_public.cer */,
-				D615D6592839FBA4004A1772 /* USERTrust RSA Certification Authority.cer */,
+				D615D6592839FBA4004A1772 /* dev.cer */,
 				D615D65A2839FBA4004A1772 /* SSLPinningManager.swift */,
 				D64E78152867537100E6CC46 /* FusionCloud.swift */,
 			);
@@ -198,7 +195,7 @@
 				D68F21A52829561100BC809A /* FusionCloud.framework */,
 				0A4DD0407C91046B8157D561 /* Pods */,
 				ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */,
-				CB72A9BBB40D2A1EAFC1B4B3 /* Frameworks */,
+				A8878F7E7CF766CFE59FC9BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */;
 			buildPhases = (
-				DBACCED080BFDA9EDE2DFE55 /* [CP] Check Pods Manifest.lock */,
+				1F4CDE3EA39838BB2749E476 /* [CP] Check Pods Manifest.lock */,
 				D68F216A28294B5200BC809A /* Headers */,
 				D68F216B28294B5200BC809A /* Sources */,
 				D68F216C28294B5200BC809A /* Frameworks */,
@@ -307,9 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D615D66D2839FBA4004A1772 /* GlobalSign.cer in Resources */,
-				D615D66E2839FBA4004A1772 /* datamesh_public.cer in Resources */,
-				D615D66F2839FBA4004A1772 /* USERTrust RSA Certification Authority.cer in Resources */,
+				D615D66F2839FBA4004A1772 /* dev.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DBACCED080BFDA9EDE2DFE55 /* [CP] Check Pods Manifest.lock */ = {
+		1F4CDE3EA39838BB2749E476 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,6 +349,7 @@
 			files = (
 				AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */,
 				D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */,
+				AB87727828B4A22100D62897 /* FusionClient.swift in Sources */,
 				D68F218A28294C7700BC809A /* TestClass.swift in Sources */,
 				D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */,
 				D615D6692839FBA4004A1772 /* CardAcquisitionRequest.swift in Sources */,
@@ -526,7 +522,7 @@
 		};
 		D68F218428294B5200BC809A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B6A49FB9273E59B829AB5B4 /* Pods-FusionCloud.debug.xcconfig */;
+			baseConfigurationReference = 0DAB855C277AC3ED313C4120 /* Pods-FusionCloud.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,7 +556,7 @@
 		};
 		D68F218528294B5200BC809A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 397E8B56D15EA588CFA5C9A8 /* Pods-FusionCloud.release.xcconfig */;
+			baseConfigurationReference = 318261303DFF759178EA1BDC /* Pods-FusionCloud.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
