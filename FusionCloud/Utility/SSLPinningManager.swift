@@ -14,6 +14,7 @@ public class  SSlPinningManager:NSObject,URLSessionDelegate {
     
     public static let shared = SSlPinningManager()
     public var isCertificatePinning:Bool = false
+    public var testEnvironment:Bool = true
     public var hardcodedPublicKey:String = "iie1VXtL7HzAMF+/PVPR9xzT80kQxdZeJ+zduCB3uj0="
     
     public let rsa2048Asn1Header:[UInt8] = [
@@ -54,8 +55,9 @@ public class  SSlPinningManager:NSObject,URLSessionDelegate {
             
             let remoteCertiData:NSData  = SecCertificateCopyData(certificate!)
             
+            let certFileName:String = (testEnvironment) ? "devcert" : "prodcert"
             
-            guard let pathToCertificate = Bundle.main.path(forResource: "USERTrust RSA Certification Authority", ofType: "cer") else{
+            guard let pathToCertificate = Bundle.main.path(forResource: certFileName, ofType: "cer") else{
                 fatalError("no local path found")
             }
             
@@ -86,10 +88,11 @@ public class  SSlPinningManager:NSObject,URLSessionDelegate {
         }
     }
     
-    public func callAnyApi(urlString:String,isCertificatePinning:Bool,response:@escaping ((String)-> ())){
+    public func callAnyApi(urlString:String,isCertificatePinning:Bool,testEnvironment:Bool,response:@escaping ((String)-> ())){
         
         let sessionObj = URLSession(configuration: .ephemeral,delegate: self,delegateQueue: nil)
         self.isCertificatePinning = isCertificatePinning
+        self.testEnvironment = testEnvironment
         var result:String =  ""
         
         guard let url = URL.init(string: urlString) else {

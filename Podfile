@@ -8,6 +8,8 @@ target 'FusionCloud' do
   # Pods for FusionCloud
   pod 'ObjectMapper', '~> 4'
   pod 'IDZSwiftCommonCrypto', '~> 0.13'
+  pod 'Starscream', '~> 4.0.0'
+  pod 'Alamofire','~> 5.3.0'  
 end
 
 post_install do |installer|
