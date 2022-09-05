@@ -6,7 +6,6 @@ public class PaymentRequest: Mappable {
   public var saleData: SaleData?
   public var paymentTransaction: PaymentTransaction?
   public var paymentData: PaymentData?
-
   public func mapping(map: Map) {
     saleData <- map["SaleData"]
     paymentTransaction <- map["PaymentTransaction"]
@@ -79,8 +78,6 @@ public class PaymentData: Mappable {
     public required init(paymentType: String) {
         self.paymentType = paymentType;
     }
-    
-    
 }
 
 public class PaymentTransaction: Mappable {

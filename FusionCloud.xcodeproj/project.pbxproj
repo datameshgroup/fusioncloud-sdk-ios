@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB87727828B4A22100D62897 /* FusionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87727728B4A22100D62897 /* FusionClient.swift */; };
 		AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
+		ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */; };
 		C330450E5E0DE69619C3CC03 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35187690BDC65977C4DD6DB0 /* Pods_FusionCloud.framework */; };
 		D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6432839FBA4004A1772 /* PaymentResponse.swift */; };
 		D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6442839FBA4004A1772 /* LoginResponse.swift */; };
@@ -57,6 +58,7 @@
 		318261303DFF759178EA1BDC /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
 		35187690BDC65977C4DD6DB0 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB87727728B4A22100D62897 /* FusionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FusionClient.swift; path = client/FusionClient.swift; sourceTree = "<group>"; };
+		ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
 		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D615D6432839FBA4004A1772 /* PaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		D615D6442839FBA4004A1772 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		D615D6472839FBA4004A1772 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */,
 				D615D6482839FBA4004A1772 /* LoginRequest.swift */,
 				D615D6492839FBA4004A1772 /* PrintRequest.swift */,
 				D615D64A2839FBA4004A1772 /* InputRequest.swift */,
@@ -361,6 +364,7 @@
 				D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */,
 				D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */,
 				D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */,
+				ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */,
 				D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */,
 				D615D6672839FBA4004A1772 /* PaymentRequest.swift in Sources */,
 				D615D6702839FBA4004A1772 /* SSLPinningManager.swift in Sources */,
