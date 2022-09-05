@@ -28,7 +28,6 @@ public class FusionClient {
         self.socket = WebSocket(request: URLRequest(url: URL(string: fusionCloudConfig.serverDomain!)!))
         createDefaultHeader()
         createDefaultSecurityTrailer()
-        
     }
 
       // Creates a default MessageHeader based on the configured saleId and poiId
@@ -80,9 +79,7 @@ public class FusionClient {
           securityTrailer!.authenticationData = authenticatedData
       }
 
-    public func sendMessage<T: Mappable>(requestBody: T, type: String
-//                                         messageHeader: MessageHeader,securityTrailer: SecurityTrailer
-    ){
+    public func sendMessage<T: Mappable>(requestBody: T, type: String){
         
         
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)

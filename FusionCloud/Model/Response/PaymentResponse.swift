@@ -222,6 +222,25 @@ public class AmountsResp: Mappable {
             account         <- map["Account"]
             paymentToken    <- map["PaymentToken"]
         }
+        public func getAccount() -> String {
+            let cardAccount = account ?? "Default"
+            let accountList = ["MagStripe", "ICC", "Tapped"]
+            if(accountList.contains(cardAccount)){
+                return cardAccount
+            }else{
+                return "Default"
+            }
+        }
+        public func getPaymentBrand() -> String {
+            let brand = paymentBrand?.lowercased().trimmingCharacters(in: .whitespaces) ?? "Default"
+            let paymentBrandList = ["visa", "mastercard", "americanexpress", "dinersclub", "jcb", "unionpay", "cupdebit", "discover", "card"]
+            
+            if(paymentBrandList.contains(brand)){
+                return paymentBrand ?? "Default"
+            }else{
+                return "Default"
+            }
+        }
     }
 
 public class PaymentReceipt: Mappable {
@@ -248,7 +267,7 @@ public class PaymentReceipt: Mappable {
         let receipt = outputContent?.outputXHTML ?? ""
         
         if(receipt == "") {
-            return nil
+            return ""
         }
 
         return receipt.base64Decoded()
