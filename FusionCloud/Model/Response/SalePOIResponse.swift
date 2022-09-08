@@ -20,22 +20,26 @@ public class SaleToPOIResponse: Mappable {
     public var abortResponse: EventNotification?
     public var transactionStatusResponse: TransactionStatusResponse?
     public var printResponse: PrintResponse?
-    public var reconResponse: ReconciliationResponse?
+    public var reconciliationResponse: ReconciliationResponse?
     public var logoutResponse: LogoutResponse?
+    public var cardAcquisitionResponse: CardAcquisitionResponse?
+    public var eventNotification: EventNotification?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        messageheader       <-  map["MessageHeader"]
-        loginResponse       <-  map["LoginResponse"]
-        paymentResponse     <-  map["PaymentResponse"]
-        inputResponse       <-  map["InputResponse"]
-        abortResponse       <-  map["EventNotification"]
+        messageheader               <-  map["MessageHeader"]
+        loginResponse               <-  map["LoginResponse"]
+        paymentResponse             <-  map["PaymentResponse"]
+        inputResponse               <-  map["InputResponse"]
+        abortResponse               <-  map["EventNotification"]
         transactionStatusResponse   <-  map["TransactionStatusResponse"]
-        printResponse       <-  map["PrintResponse"]
-        reconResponse       <-  map["ReconciliationResponse"]
-        logoutResponse      <-  map["LogoutResponse"]
-        securityTrailer     <-  map["SecurityTrailer"]
+        printResponse               <-  map["PrintResponse"]
+        reconciliationResponse      <-  map["ReconciliationResponse"]
+        logoutResponse              <-  map["LogoutResponse"]
+        securityTrailer             <-  map["SecurityTrailer"]
+        cardAcquisitionResponse     <-  map["CardAcquisitionResponse"]
+        eventNotification           <-  map["EventNotification"]
     }
 }
 

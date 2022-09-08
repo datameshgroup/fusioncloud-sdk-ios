@@ -9,25 +9,192 @@ import Foundation
 import Starscream
 import ObjectMapper
 
-@available(iOS 15.0, *)
-public class FusionClient {
 
+public protocol FusionClientDelegate: AnyObject {
+    //Socket events
+    func socketConnected(client: FusionClient)
+    func socketDisconnected(client: FusionClient)
+    func socketReceived(client: FusionClient, data: String)
+    func socketError(client: FusionClient, error: Error)
+    
+    func logData(client: FusionClient,type: String, data: String) //logtype: info, error, warning
+    
+    func loginResponseReceived(client: FusionClient, messageHeader: MessageHeader, loginResponse: LoginResponse)
+    func paymentResponseReceived(client: FusionClient, messageHeader: MessageHeader, paymentResponse: PaymentResponse)
+    func transactionStatusResponseReceived(client: FusionClient, messageHeader: MessageHeader, transactionStatusResponse: TransactionStatusResponse)
+    
+    func displayRequestReceived(client: FusionClient, messageHeader: MessageHeader, displayRequest: DisplayRequest)
+    func eventNotificationReceived(client: FusionClient, messageHeader: MessageHeader, eventNotification: EventNotification)
+    
+    func reconcilationResponseReceived(client: FusionClient, messageHeader: MessageHeader, reconcilationResponse: ReconciliationResponse)
+    func cardAcquisitionResponseReceived(client: FusionClient, messageHeader: MessageHeader, cardAcquisitionResponse: CardAcquisitionResponse)
+    func logoutResponseResponseReceived(client: FusionClient, messageHeader: MessageHeader, logoutResponse: LogoutResponse)
+}
+
+@available(iOS 12.0, *)
+public class FusionClient: WebSocketDelegate{
+    public func didReceive(event: WebSocketEvent, client: WebSocket) {
+        switch event {
+        case .connected(_):
+            fusionClientDelegate?.socketConnected(client: self)
+        case .disconnected(_, _):
+            fusionClientDelegate?.socketDisconnected(client: self)
+            //reconnect?
+        case .text(let string):
+            fusionClientDelegate?.socketReceived(client: self, data: string)
+            parseResponse(str: string)
+        case .binary(_):
+            break
+        case .viabilityChanged(_):
+            break
+        case .reconnectSuggested(_):
+            break
+        case .cancelled:
+            fusionClientDelegate?.socketDisconnected(client: self)
+        case .error(let error):
+            if let e = error as? WSError {
+                appendLog(type: "error",  content: "websocket encountered an WS-error: \(e.message)")
+            }
+            else if let e = error {
+                appendLog(type: "error", content: "websocket encountered an error: \(e.localizedDescription)")
+            }
+            else {
+                appendLog(type: "error", content: "websocket encountered an unknown error")
+            }
+            fusionClientDelegate?.socketError(client: self, error: error!)
+        case .pong(_):
+            break;
+        case .ping(_):
+            break;
+        }
+    }
+    
+
+    
+    func parseResponse(str: String){
+        appendLog(type: "info", content: "RX: \(str)")
+        
+        let rc = SaleToPOI(JSONString: str)
+        do{
+            // validate security trailer
+            try crypto.validateSecurityTrailer(securityTrailer: (rc!.saleToPOIResponse?.securityTrailer ?? rc!.saleToPOIRequest?.securityTrailer)!, kek: fusionCloudConfig!.kekValue!, raw: str)
+
+
+            // Message will be in saleToPOIRequest (for displays) or saleToPOIResponse (for all others)
+            let poiResp = rc?.saleToPOIResponse
+            let poiRequ = rc?.saleToPOIRequest
+            let mh = poiResp?.messageheader ?? poiRequ?.messageHeader
+            
+            // Validate response
+            if ((poiRequ == nil && poiResp == nil) || mh == nil ||
+                mh?.messageCategory == nil) {
+                appendLog(type: "error", content: "Invalid response. Data == nil") //logtype: error
+                return
+            }
+            
+            switch(mh!.messageCategory)
+            {
+            case "Login":
+                let r = poiResp?.loginResponse;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.loginResponseReceived(client: self, messageHeader: mh!, loginResponse: r!)
+                break
+            case "Payment":
+                    let r = poiResp?.paymentResponse;
+                    if(r == nil) {
+                        appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                        return
+                    }
+                fusionClientDelegate?.paymentResponseReceived(client: self, messageHeader: mh!, paymentResponse: r!)
+                break
+            case "TransactionStatus":
+                let r = poiResp?.transactionStatusResponse;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.transactionStatusResponseReceived(client: self, messageHeader: mh!, transactionStatusResponse: r!)
+                break
+            case "Display":
+                let r = poiRequ?.displayRequest;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.displayRequestReceived(client: self, messageHeader: mh!, displayRequest: r!)
+                break
+            case "Reconciliation":
+                let r = poiResp?.reconciliationResponse;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.reconcilationResponseReceived(client: self, messageHeader: mh!, reconcilationResponse: r!)
+                break
+            case "CardAquisition":
+                let r = poiResp?.cardAcquisitionResponse;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.cardAcquisitionResponseReceived(client: self, messageHeader: mh!, cardAcquisitionResponse: r!)
+                break
+            case "Logout":
+                let r = poiResp?.logoutResponse;
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.logoutResponseResponseReceived(client: self, messageHeader: mh!, logoutResponse: r!)
+                break
+            case "Event":
+                let r = poiRequ?.eventNotification ?? poiResp?.eventNotification
+                if(r == nil) {
+                    appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
+                    return
+                }
+                fusionClientDelegate?.eventNotificationReceived(client: self, messageHeader: mh!, eventNotification: r!)
+                break
+            default:
+                appendLog(type: "info", content: "Unknown message type: " + mh!.messageCategory!)
+            }
+        }
+        catch is MacValidation {
+            appendLog(type: "warning", content: "Received and ignored a response with invalid MAC")
+        }
+        catch {
+            appendLog(type: "warning", content: "Ignored a response with parsing error")
+        }
+
+    }
+    
     public var fusionCloudConfig: FusionCloudConfig?
     public var socket: WebSocket?
     public var messageHeader: MessageHeader?
     public var securityTrailer: SecurityTrailer?
+    public weak var fusionClientDelegate: FusionClientDelegate?
     
     let crypto = Crypto()
-    var logs: String = ""
+    public var logs: String = ""
 
     public init(){
     }
     
     public init(fusionCloudConfig: FusionCloudConfig){
         self.fusionCloudConfig = fusionCloudConfig
-        self.socket = WebSocket(request: URLRequest(url: URL(string: fusionCloudConfig.serverDomain!)!))
+        let request = URLRequest(url: URL(string: fusionCloudConfig.serverDomain!)!)
+        let pinner = FoundationSecurity(allowSelfSigned: fusionCloudConfig.allowSelfSigned ?? true) // don't validate SSL certificates FOR NOW
+        self.socket = WebSocket(request: request, certPinner: pinner)
+        socket!.delegate = self
+        socket!.connect()
+        
+        
         createDefaultHeader()
         createDefaultSecurityTrailer()
+
     }
 
       // Creates a default MessageHeader based on the configured saleId and poiId
@@ -80,17 +247,16 @@ public class FusionClient {
       }
 
     public func sendMessage<T: Mappable>(requestBody: T, type: String){
-        
-        
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)
 
-        appendLog(content: "\n\nRequest: \(request)")
+        appendLog(type: "info", content: "TX: \(request)")
         socket!.write(data: request.data(using: .utf8)!, completion: {})
     }
-    func appendLog(content: String) {
-        logs.append(contentsOf: Date().ISO8601Format() + " " + content + "\n\n")
-        print(logs)
-        logs = ""
+    func appendLog(type: String, content: String) {
+        ///types: error, warning, info
+        logs.append(contentsOf: "\n \(Date())" )
+        logs.append(contentsOf: "\n\(type) : \(content)\n")
+        fusionClientDelegate?.logData(client: self, type: type, data: content)
     }
     
 }
