@@ -224,7 +224,7 @@ public class AmountsResp: Mappable {
         }
         public func getAccount() -> String {
             let cardAccount = account ?? "Default"
-            let accountList = ["MagStripe", "ICC", "Tapped"]
+            let accountList = ["Credit", "Cheque", "Savings", "Default"]
             if(accountList.contains(cardAccount)){
                 return cardAccount
             }else{
