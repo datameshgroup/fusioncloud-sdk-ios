@@ -25,7 +25,7 @@ public class FusionCloudConfig{
     public required init(testEnvironmentui: Bool?) {
         testEnvironment = testEnvironmentui ?? true
         
-        self.serverDomain = testEnvironment ? "wss://www.cloudposintegration.io/nexodev" : "wss://prod1.datameshgroup.io:5000"
+        self.serverDomain = testEnvironment ? "wss://www.cloudposintegration.io/nexodev" : "wss://nexo.datameshgroup.io:5000"
         self.keyIdentifier = testEnvironment ? "SpecV2TestMACKey" : "SpecV2ProdMACKey"
         self.keyVersion = testEnvironment ? "20191122164326" : "20191122164326"
         
