@@ -178,7 +178,6 @@ public class FusionClient: WebSocketDelegate{
     public weak var fusionClientDelegate: FusionClientDelegate?
     
     let crypto = Crypto()
-    public var logs: String = ""
 
     public init(){
     }
@@ -254,8 +253,6 @@ public class FusionClient: WebSocketDelegate{
     }
     func appendLog(type: String, content: String) {
         ///types: error, warning, info
-        logs.append(contentsOf: "\n \(Date())" )
-        logs.append(contentsOf: "\n\(type) : \(content)\n")
         fusionClientDelegate?.logData(client: self, type: type, data: content)
     }
     
