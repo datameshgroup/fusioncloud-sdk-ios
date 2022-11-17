@@ -29,6 +29,7 @@ public protocol FusionClientDelegate: AnyObject {
     func reconcilationResponseReceived(client: FusionClient, messageHeader: MessageHeader, reconcilationResponse: ReconciliationResponse)
     func cardAcquisitionResponseReceived(client: FusionClient, messageHeader: MessageHeader, cardAcquisitionResponse: CardAcquisitionResponse)
     func logoutResponseResponseReceived(client: FusionClient, messageHeader: MessageHeader, logoutResponse: LogoutResponse)
+    func credentialsError(client: FusionClient,error: String)
 }
 
 @available(iOS 12.0, *)
@@ -246,6 +247,33 @@ public class FusionClient: WebSocketDelegate{
       }
 
     public func sendMessage<T: Mappable>(requestBody: T, type: String){
+        let mh = self.messageHeader!.toJSONString()
+
+        if mh!.contains("Login") {
+            let k = fusionCloudConfig!.kekValue!
+            if k.count != 48{
+                appendLog(type: "error", content: "Invalid KEK Value")
+                fusionClientDelegate?.credentialsError(client: self, error: "Invalid KEK Value")
+                return
+            }
+            var g = k.unicodeScalars.makeIterator()
+            var a : [UInt8] = []
+            while let msn = g.next()
+            {
+                if let lsn = g.next()
+                {
+                    a += [ (convertHexDigit(c:msn) << 4 | convertHexDigit(c:lsn)) ]
+                }
+                else
+                {
+                    appendLog(type: "error", content: "Invalid KEK Value")
+                    fusionClientDelegate?.credentialsError(client: self, error: "Invalid KEK Value")
+                    return
+                }
+            }
+        }
+        
+        
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)
 
         appendLog(type: "info", content: "TX: \(request)")
@@ -254,6 +282,16 @@ public class FusionClient: WebSocketDelegate{
     func appendLog(type: String, content: String) {
         ///types: error, warning, info
         fusionClientDelegate?.logData(client: self, type: type, data: content)
+    }
+    func convertHexDigit(c : UnicodeScalar) -> UInt8
+    {
+        switch c {
+            case UnicodeScalar("0")...UnicodeScalar("9"): return UInt8(c.value - UnicodeScalar("0").value)
+            case UnicodeScalar("a")...UnicodeScalar("f"): return UInt8(c.value - UnicodeScalar("a").value + UInt32(0xa))
+            case UnicodeScalar("A")...UnicodeScalar("F"): return UInt8(c.value - UnicodeScalar("A").value + UInt32(0xa))
+            default: appendLog(type: "error", content: "convertHexDigit: Invalid hex digit")
+                        return UInt8(0)
+        }
     }
     
 }
