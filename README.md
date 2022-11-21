@@ -140,11 +140,11 @@ Set your build target:
 ** For iOS simulator, choose *iPad (9th generation)* 
 
 Target configuration
-* For iOS device:
+* For iOS Simulator:
 ** Make sure that the value of *Excluded Architecture* of the Target is *arm64*
 <img width="999" alt="image" src="https://user-images.githubusercontent.com/107380164/189850551-07d62c4c-22cc-49f4-9b11-a195e68fbf19.png">
 
-* For iOS Simulator: 
+* For iOS Device: 
 ** The value of *Excluded Architecture* of the Target should be blank
 
 Build the library 
