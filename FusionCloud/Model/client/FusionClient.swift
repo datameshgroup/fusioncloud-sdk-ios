@@ -272,8 +272,7 @@ public class FusionClient: WebSocketDelegate{
                 }
             }
         }
-        
-        
+    
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)
 
         appendLog(type: "info", content: "TX: \(request)")

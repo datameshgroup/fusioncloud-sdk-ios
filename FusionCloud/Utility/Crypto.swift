@@ -19,7 +19,7 @@ public class Crypto {
         
         //print("request => \(request)")
         let requestBody = buildRequestBody(request: request, header: header, requestType: type)
-        let saleToPOIRequest = "{\"SaleToPOIRequest\":{ \(requestBody),\(buildSecurityTrailer(kek: kek, request: requestBody, security: security))}"
+        let saleToPOIRequest = "{\"SaleToPOIRequest\":{ \(requestBody),\(buildSecurityTrailer(kek: kek, request: requestBody.replacingOccurrences(of: "\\", with: ""), security: security))}"
         return saleToPOIRequest
     }
     
