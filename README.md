@@ -60,7 +60,8 @@ kekValue: "<<Provided by DataMesh>>")
 ```
 Add *FusionClientDelegate* instance to your class.
 * This will reveal the following socket events
-<img width="841" alt="image" src="https://user-images.githubusercontent.com/107380164/189849081-c3b75dd9-3738-404d-90b7-46e1735dc8c8.png">
+<img width="841" alt="image" src="https://user-images.githubusercontent.com/107380164/202443409-040fa492-76ee-4c17-ab0b-a918a1a3a111.png">
+
 
 Test connection to Socket
 ```
@@ -139,11 +140,11 @@ Set your build target:
 ** For iOS simulator, choose *iPad (9th generation)* 
 
 Target configuration
-* For iOS device:
+* For iOS Simulator:
 ** Make sure that the value of *Excluded Architecture* of the Target is *arm64*
 <img width="999" alt="image" src="https://user-images.githubusercontent.com/107380164/189850551-07d62c4c-22cc-49f4-9b11-a195e68fbf19.png">
 
-* For iOS Simulator: 
+* For iOS Device: 
 ** The value of *Excluded Architecture* of the Target should be blank
 
 Build the library 
