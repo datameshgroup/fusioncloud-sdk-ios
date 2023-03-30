@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07AC08B689BD5335A3B41704 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */; };
 		AB87727828B4A22100D62897 /* FusionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87727728B4A22100D62897 /* FusionClient.swift */; };
 		AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
 		ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */; };
@@ -40,6 +39,7 @@
 		D67D0CD82883D39E00B7003C /* SaleToPOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */; };
 		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D68F218A28294C7700BC809A /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F218928294C7700BC809A /* TestClass.swift */; };
+		E72B9DE13913BBBCC6EB1C11 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
-		1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
-		491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
 		AB87727728B4A22100D62897 /* FusionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FusionClient.swift; path = client/FusionClient.swift; sourceTree = "<group>"; };
 		ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
 		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +89,7 @@
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07AC08B689BD5335A3B41704 /* Pods_FusionCloud.framework in Frameworks */,
+				E72B9DE13913BBBCC6EB1C11 /* Pods_FusionCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,16 +114,16 @@
 		0A4DD0407C91046B8157D561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */,
-				1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */,
+				4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */,
+				D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		7EA8F3BCF373577A5FE2D773 /* Frameworks */ = {
+		989EB0A58B24E3D294C1F78E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */,
+				07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				D68F21A52829561100BC809A /* FusionCloud.framework */,
 				0A4DD0407C91046B8157D561 /* Pods */,
 				ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */,
-				7EA8F3BCF373577A5FE2D773 /* Frameworks */,
+				989EB0A58B24E3D294C1F78E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,7 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */;
 			buildPhases = (
-				61B053AD559E66B63BC7AF12 /* [CP] Check Pods Manifest.lock */,
+				7226FEA6CD7293E686C8063C /* [CP] Check Pods Manifest.lock */,
 				D68F216A28294B5200BC809A /* Headers */,
 				D68F216B28294B5200BC809A /* Sources */,
 				D68F216C28294B5200BC809A /* Frameworks */,
@@ -318,7 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		61B053AD559E66B63BC7AF12 /* [CP] Check Pods Manifest.lock */ = {
+		7226FEA6CD7293E686C8063C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -466,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -510,7 +512,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -522,7 +524,7 @@
 		};
 		D68F218428294B5200BC809A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */;
+			baseConfigurationReference = 4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +534,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -542,11 +545,11 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -556,7 +559,7 @@
 		};
 		D68F218528294B5200BC809A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */;
+			baseConfigurationReference = D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +569,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -576,11 +580,11 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = datamesh.FusionCloud;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

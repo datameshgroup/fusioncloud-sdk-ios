@@ -1,0 +1,801 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FusionCloud
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import Foundation
+@_exported import FusionCloud
+import IDZSwiftCommonCrypto
+import ObjectMapper
+import Starscream
+import Swift
+import _Concurrency
+import _StringProcessing
+public class TransactionStatusResponse : ObjectMapper.Mappable {
+  public var response: FusionCloud.Response?
+  public var messageReference: FusionCloud.MessageReference?
+  public var repeatedMessageResponse: FusionCloud.RepeatedMessageResponse?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class RepeatedMessageResponse : ObjectMapper.Mappable {
+  public var repeatedResponseMessageBody: FusionCloud.RepeatedResponseMessageBody?
+  public var messageHeader: FusionCloud.MessageHeader?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class RepeatedResponseMessageBody : ObjectMapper.Mappable {
+  public var paymentResponse: FusionCloud.PaymentResponse?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SaleToPOILoginRequest : ObjectMapper.Mappable {
+  public var saleToPOIRequest: FusionCloud.SaleToPOIRequest?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public protocol FusionClientDelegate : AnyObject {
+  func socketConnected(client: FusionCloud.FusionClient)
+  func socketDisconnected(client: FusionCloud.FusionClient)
+  func socketReceived(client: FusionCloud.FusionClient, data: Swift.String)
+  func socketError(client: FusionCloud.FusionClient, error: Swift.Error)
+  func logData(client: FusionCloud.FusionClient, type: Swift.String, data: Swift.String)
+  func loginResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, loginResponse: FusionCloud.LoginResponse)
+  func paymentResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, paymentResponse: FusionCloud.PaymentResponse)
+  func transactionStatusResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, transactionStatusResponse: FusionCloud.TransactionStatusResponse)
+  func displayRequestReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, displayRequest: FusionCloud.DisplayRequest)
+  func eventNotificationReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, eventNotification: FusionCloud.EventNotification)
+  func reconcilationResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, reconcilationResponse: FusionCloud.ReconciliationResponse)
+  func cardAcquisitionResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, cardAcquisitionResponse: FusionCloud.CardAcquisitionResponse)
+  func logoutResponseResponseReceived(client: FusionCloud.FusionClient, messageHeader: FusionCloud.MessageHeader, logoutResponse: FusionCloud.LogoutResponse)
+  func credentialsError(client: FusionCloud.FusionClient, error: Swift.String)
+}
+@available(iOS 12.0, *)
+public class FusionClient : Starscream.WebSocketDelegate {
+  public func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket)
+  public var fusionCloudConfig: FusionCloud.FusionCloudConfig?
+  public var socket: Starscream.WebSocket?
+  public var messageHeader: FusionCloud.MessageHeader?
+  public var securityTrailer: FusionCloud.SecurityTrailer?
+  weak public var fusionClientDelegate: FusionCloud.FusionClientDelegate?
+  public init()
+  public init(fusionCloudConfig: FusionCloud.FusionCloudConfig)
+  public func createDefaultHeader()
+  public func createDefaultSecurityTrailer()
+  public func sendMessage<T>(requestBody: T, type: Swift.String) where T : ObjectMapper.Mappable
+  @objc deinit
+}
+public struct TestClass {
+  public static func testThisFunction() -> Swift.String
+}
+public class LoginRequest : ObjectMapper.Mappable {
+  public var dateTime: Foundation.Date?
+  public var saleSoftware: FusionCloud.SaleSoftware?
+  public var saleTerminalData: FusionCloud.SaleTerminalData?
+  public var trainingModeFlag: Swift.Bool?
+  public var operatorLanguage: Swift.String?
+  public var operatorID: Swift.String?
+  public var shiftNumber: Swift.String?
+  public var pOISerialNumber: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SaleSoftware : ObjectMapper.Mappable {
+  public var providerIdentification: Swift.String?
+  public var ApplicationName: Swift.String?
+  public var softwareVersion: Swift.String?
+  public var certificationCode: Swift.String?
+  public var componentType: Swift.String?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SaleTerminalData : ObjectMapper.Mappable {
+  public var terminalEnvironment: Swift.String?
+  public var saleCapabilities: [Swift.String]?
+  public var saleProfile: FusionCloud.SaleProfile?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SaleProfile : ObjectMapper.Mappable {
+  public var genericProfile: Swift.String?
+  public var serviceProfiles: [Swift.String]?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class CardAcquisitionRequest : ObjectMapper.Mappable {
+  public var saleData: FusionCloud.SaleData?
+  public var cardAcquisitionTransaction: FusionCloud.CardAcquisitionTransaction?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class CardAcquisitionTransaction : ObjectMapper.Mappable {
+  public var allowedPaymentBrand: [Swift.String]?
+  public var forceEntryMode: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class LoginResponse : ObjectMapper.Mappable {
+  public var response: FusionCloud.Response?
+  public var poiSystemData: FusionCloud.POISystemData?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class Response : ObjectMapper.Mappable {
+  public var result: Swift.String?
+  public var errorCondition: Swift.String?
+  public var additionalResponse: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  public func isSuccess() -> Swift.Bool
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class POISystemData : ObjectMapper.Mappable {
+  public var dateTime: Swift.String?
+  public var poiSoftware: FusionCloud.POISoftware?
+  public var poiTerminalData: FusionCloud.POITerminalData?
+  public var poiStatus: FusionCloud.POIStatus?
+  public var tokenRequestStatus: Swift.Bool?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class POISoftware : ObjectMapper.Mappable {
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class POITerminalData : ObjectMapper.Mappable {
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class POIProfile : ObjectMapper.Mappable {
+  public var genericProfile: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class POIStatus : ObjectMapper.Mappable {
+  public var globalStatus: Swift.String?
+  public var PEDOKFlag: Swift.Bool?
+  public var cardReaderOKFlag: Swift.Bool?
+  public var printerStatus: Swift.String?
+  public var communicationOKFlag: Swift.Bool?
+  public var fraudPreventionFlag: Swift.Bool?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class Crypto {
+  public init()
+  public func buildRequest<T>(kek: Swift.String, request: T, header: FusionCloud.MessageHeader, security: FusionCloud.SecurityTrailer, type: Swift.String) -> Swift.String where T : ObjectMapper.Mappable
+  public func buildRequestBody<T>(request: T, header: FusionCloud.MessageHeader, requestType: Swift.String) -> Swift.String where T : ObjectMapper.Mappable
+  public func buildSecurityTrailer(kek: Swift.String, request: Swift.String, security: FusionCloud.SecurityTrailer) -> Swift.String
+  public func generateMAC(macBody: Swift.String, hexKey: Swift.String) -> Swift.String
+  public func generate16ByteKey() -> [Swift.UInt8]
+  public func randomString(length: Swift.Int) -> Swift.String
+  public func generateEncryptedKey(randomKey: [Swift.UInt8], KEK: Swift.String) -> [Swift.UInt8]
+  public func extractEncryptedKey(encryptedKey: [Swift.UInt8], kek: Swift.String) -> [Swift.UInt8]
+  public func crypt(value: [Swift.UInt8], key: Swift.String) -> [Swift.UInt8]
+  public func decrypt(value: [Swift.UInt8], key: Swift.String) -> [Swift.UInt8]
+  public func append8Bytes(h: [Swift.UInt8]) -> [Swift.UInt8]
+  public func getLast8Bytes(encrypt: [Swift.UInt8]) -> [Swift.UInt8]
+  public func getSha256(s: Swift.String) -> [Swift.UInt8]
+  public func validateSecurityTrailer(securityTrailer: FusionCloud.SecurityTrailer, kek: Swift.String, raw: Swift.String) throws
+  public func getRawMacBody(jsonRaw: Swift.String) -> Swift.String
+  @objc deinit
+}
+public enum MacValidation : Swift.Error {
+  case runtimeError(Swift.String)
+}
+public class DisplayRequest : ObjectMapper.Mappable {
+  public var displayOutput: FusionCloud.DisplayOutput?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func getCashierDisplayAsPlainText() -> Swift.String?
+  @objc deinit
+}
+public class DisplayOutput : ObjectMapper.Mappable {
+  public var responseRequiredFlag: Swift.Bool?
+  public var device: Swift.String?
+  public var infoQuality: Swift.String?
+  public var outputContent: FusionCloud.OutputContent?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class OutputContent : ObjectMapper.Mappable {
+  public var outputFormat: Swift.String?
+  public var outputText: FusionCloud.OutputText?
+  public var outputXHTML: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class OutputText : ObjectMapper.Mappable {
+  public var text: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class SaleToPOIResponse : ObjectMapper.Mappable {
+  public var messageheader: FusionCloud.MessageHeader?
+  public var loginResponse: FusionCloud.LoginResponse?
+  public var securityTrailer: FusionCloud.SecurityTrailer?
+  public var paymentResponse: FusionCloud.PaymentResponse?
+  public var inputResponse: FusionCloud.InputResponse?
+  public var abortResponse: FusionCloud.EventNotification?
+  public var transactionStatusResponse: FusionCloud.TransactionStatusResponse?
+  public var printResponse: FusionCloud.PrintResponse?
+  public var reconciliationResponse: FusionCloud.ReconciliationResponse?
+  public var logoutResponse: FusionCloud.LogoutResponse?
+  public var cardAcquisitionResponse: FusionCloud.CardAcquisitionResponse?
+  public var eventNotification: FusionCloud.EventNotification?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class InputResponse : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class OutputResult : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class InputResult : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class Input : ObjectMapper.Mappable {
+  public var inputCommand: Swift.String?
+  public var confirmedFlag: Swift.String?
+  public var password: Swift.String?
+  public var menuEntryNumber: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SaleToPOI : ObjectMapper.Mappable {
+  public var saleToPOIResponse: FusionCloud.SaleToPOIResponse?
+  public var saleToPOIRequest: FusionCloud.SaleToPOIRequest?
+  required public init?()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class CardAcquisitionResponse : ObjectMapper.Mappable {
+  public var response: FusionCloud.Response?
+  public var saleData: FusionCloud.SaleData?
+  public var poiData: FusionCloud.POIData?
+  public var paymentInstrumentData: FusionCloud.PaymentInstrumentData?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class LogoutResponse : ObjectMapper.Mappable {
+  public var response: FusionCloud.Response?
+  public var poiSystemData: FusionCloud.POISystemData?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public func isCardValid(cardNumber: Swift.String, cardBrand: Swift.String) -> (isValid: Swift.Bool, errorMessage: Swift.String)
+public enum CreditCardType : Swift.String {
+  case visa
+  case mastercard
+  case americanexpress
+  case dinersclub
+  case jcb
+  case unionpay, cupdebit
+  case discover
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class MessageHeader : ObjectMapper.Mappable {
+  public var messageClass: Swift.String?
+  public var messageCategory: Swift.String?
+  public var messageType: Swift.String?
+  public var serviceID: Swift.String?
+  public var protocolVersion: Swift.String?
+  public var saleID: Swift.String!
+  public var poiID: Swift.String!
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentRequest : ObjectMapper.Mappable {
+  public var saleData: FusionCloud.SaleData?
+  public var paymentTransaction: FusionCloud.PaymentTransaction?
+  public var paymentData: FusionCloud.PaymentData?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class SaleData : ObjectMapper.Mappable {
+  public var operatorID: Swift.String?
+  public var operatorLanguage: Swift.String?
+  public var shiftNumber: Swift.String?
+  public var customerLanguage: Swift.String?
+  public var saleTransactionID: FusionCloud.SaleTransactionID?
+  public var saleReferenceID: Swift.String?
+  public var saleTerminalData: FusionCloud.SaleTerminalData?
+  public var tokenRequestedType: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class SaleTransactionID : ObjectMapper.Mappable {
+  public var transactionID: Swift.String?
+  public var timeStamp: Foundation.Date?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  required public init(transactionID: Swift.String)
+  @objc deinit
+}
+public class PaymentData : ObjectMapper.Mappable {
+  public var paymentType: Swift.String?
+  public var paymentInstrumentData: FusionCloud.PaymentInstrumentData?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  required public init(paymentType: Swift.String)
+  @objc deinit
+}
+public class PaymentTransaction : ObjectMapper.Mappable {
+  public var amountsReq: FusionCloud.AmountsReq?
+  public var origionalPOITransaction: FusionCloud.OrigionalPOITransaction?
+  public var saleItem: [FusionCloud.SaleItem]?
+  public var transactionConditions: FusionCloud.TransactionConditions?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class TransactionConditions : ObjectMapper.Mappable {
+  public var allowedPaymentBrands: [Swift.String]?
+  public var acquirerID: [Swift.String]?
+  public var debitPreferredFlag: Swift.Bool?
+  public var forceOnlineFlag: Swift.Bool?
+  public var merchantCategoryCode: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class OrigionalPOITransaction : ObjectMapper.Mappable {
+  public var saleID: Swift.String?
+  public var poiID: Swift.String?
+  public var poiTransactionID: FusionCloud.POITransactionID?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class AmountsReq : ObjectMapper.Mappable {
+  public var currency: Swift.String?
+  public var requestedAmount: Foundation.NSDecimalNumber?
+  public var cashBackAmount: Foundation.NSDecimalNumber?
+  public var tipAmount: Foundation.NSDecimalNumber?
+  public var surchargeAmount: Foundation.NSDecimalNumber?
+  public var paidAmount: Foundation.NSDecimalNumber?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class SaleItem : ObjectMapper.Mappable {
+  public var itemID: Swift.Int64?
+  public var productCode: Swift.String?
+  public var eanUpc: Swift.String?
+  public var unitOfMeasure: Swift.String?
+  public var quantity: Foundation.NSDecimalNumber?
+  public var unitPrice: Foundation.NSDecimalNumber?
+  public var itemAmount: Foundation.NSDecimalNumber?
+  public var taxCode: Swift.String?
+  public var saleChannel: Swift.String?
+  public var productLabel: Swift.String?
+  public var additionalProductInfo: Swift.String?
+  public var parentItemID: Swift.Int64?
+  public var costBase: Foundation.NSDecimalNumber?
+  public var discount: Foundation.NSDecimalNumber?
+  public var categories: [Swift.String]?
+  public var brand: Swift.String?
+  public var quantityInStock: Foundation.NSDecimalNumber?
+  public var tags: [Swift.String]?
+  public var restricted: Swift.Bool?
+  public var pageURL: Swift.String?
+  public var imageURLs: [Swift.String]?
+  public var style: Swift.String?
+  public var size: Swift.String?
+  public var colour: Swift.String?
+  public var weight: Foundation.NSDecimalNumber?
+  public var weightUnitOfMeasure: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class ReconcillationRequest : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class EventNotification : ObjectMapper.Mappable {
+  public var timeStamp: Swift.String?
+  public var eventToNotify: Swift.String?
+  public var eventDetails: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentResponse : ObjectMapper.Mappable {
+  public var response: FusionCloud.PResponse?
+  public var saleData: FusionCloud.SaleData?
+  public var poiData: FusionCloud.POIData?
+  public var paymentResult: FusionCloud.PaymentResult?
+  public var paymentReceipt: [FusionCloud.PaymentReceipt]?
+  required public init?(map: ObjectMapper.Map)
+  public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PResponse : ObjectMapper.Mappable {
+  public var result: Swift.String?
+  public var errorCondition: Swift.String?
+  public var additionalResponse: Swift.String?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  public func isSuccess() -> Swift.Bool
+  @objc deinit
+}
+public class POIData : ObjectMapper.Mappable {
+  public var poiReconciliationID: Swift.String?
+  public var poiTransactionID: FusionCloud.POITransactionID?
+  public var allowedProductCodes: [Swift.String]?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class POITransactionID : ObjectMapper.Mappable {
+  public var transactionID: Swift.String?
+  public var timeStamp: Swift.String?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentResult : ObjectMapper.Mappable {
+  public var paymentType: Swift.String?
+  public var onlineFlag: Swift.Bool?
+  public var amountsResp: FusionCloud.AmountsResp?
+  public var paymentInstrumentData: FusionCloud.PaymentInstrumentData?
+  public var paymentAcquirerData: FusionCloud.PaymentAcquirerData?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class AmountsResp : ObjectMapper.Mappable {
+  public var currency: Swift.String?
+  public var authorizedAmount: Foundation.NSDecimalNumber?
+  public var totalFeesAmount: Foundation.NSDecimalNumber?
+  public var cashBackAmount: Foundation.NSDecimalNumber?
+  public var tipAmount: Foundation.NSDecimalNumber?
+  public var surchargeAmount: Foundation.NSDecimalNumber?
+  public var partialAuthorizedAmount: Foundation.NSDecimalNumber?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentAcquirerData : ObjectMapper.Mappable {
+  public var acquirerID: Swift.String?
+  public var merchantID: Swift.String?
+  public var acquirerPOIID: Swift.String?
+  public var approvalCode: Swift.String?
+  public var responseCode: Swift.String?
+  public var hostReconcilationID: Swift.String?
+  public var acquirerTransactionID: FusionCloud.AcquirerTransactionID?
+  public var rrn: Swift.String?
+  public var stan: Swift.String?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class AcquirerTransactionID : ObjectMapper.Mappable {
+  public var transactionID: Swift.String?
+  public var timeStamp: Swift.String?
+  public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentInstrumentData : ObjectMapper.Mappable {
+  public var paymentInstrumentType: Swift.String?
+  public var cardData: FusionCloud.CardData?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentToken : ObjectMapper.Mappable {
+  public var tokenRequestType: Swift.String?
+  public var tokenValue: Swift.String?
+  public var expiryDateTime: Swift.String?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class CardData : ObjectMapper.Mappable {
+  public var entryMode: Swift.String?
+  public var paymentBrand: Swift.String?
+  public var maskedPan: Swift.String?
+  public var account: Swift.String?
+  public var paymentToken: FusionCloud.PaymentToken?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  public func getAccount() -> Swift.String
+  public func getPaymentBrand() -> Swift.String
+  @objc deinit
+}
+public class PaymentReceipt : ObjectMapper.Mappable {
+  public var documentQualifier: Swift.String?
+  public var integratedPrintFlag: Swift.Bool?
+  public var requiredSignatureFlag: Swift.Bool?
+  public var outputContent: FusionCloud.OutputContent?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  public func getReceiptAsPlainText() -> Swift.String?
+  @objc deinit
+}
+public class PrintRequest : ObjectMapper.Mappable {
+  public var printOutput: FusionCloud.PrintOuput?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PrintOuput : ObjectMapper.Mappable {
+  public var documentQualifier: Swift.String?
+  public var integratedPrintFlag: Swift.Bool?
+  public var requiredSignatureFlag: Swift.Bool?
+  public var outputContent: FusionCloud.OutputContent?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PrintResponse : ObjectMapper.Mappable {
+  public var documentQuaifier: Swift.String?
+  public var response: FusionCloud.Response?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class TransactionStatusRequest : ObjectMapper.Mappable {
+  public var messageReference: FusionCloud.MessageReference?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class MessageReference : ObjectMapper.Mappable {
+  public var messageCategory: Swift.String?
+  public var serviceID: Swift.String?
+  public var saleID: Swift.String?
+  public var poiID: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class InputRequest : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class InputData : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class Menu : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ReconciliationResponse : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class TransactionTotal : ObjectMapper.Mappable {
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class PaymentTotal : ObjectMapper.Mappable {
+  public var transactionType: Swift.String?
+  public var transactionCount: Swift.String?
+  public var transactionAmount: Swift.String?
+  public var tipAmount: Swift.String?
+  public var surchargeAmount: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class FusionCloudConfig {
+  public var serverDomain: Swift.String?
+  public var kekValue: Swift.String?
+  public var keyIdentifier: Swift.String?
+  public var keyVersion: Swift.String?
+  public var providerIdentification: Swift.String?
+  public var applicationName: Swift.String?
+  public var softwareVersion: Swift.String?
+  public var certificationCode: Swift.String?
+  public var saleID: Swift.String!
+  public var poiID: Swift.String!
+  public var testEnvironment: Swift.Bool
+  public var allowSelfSigned: Swift.Bool?
+  required public init(testEnvironmentui: Swift.Bool?)
+  @objc deinit
+}
+public class AbortRequest : ObjectMapper.Mappable {
+  public var messageReference: FusionCloud.MessageReference?
+  public var abortReason: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class LogoutRequest : ObjectMapper.Mappable {
+  public var maintenanceAllowed: Swift.Bool?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class SecurityTrailer : ObjectMapper.Mappable {
+  public var contentType: Swift.String?
+  public var authenticationData: FusionCloud.AuthenticationData?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class AuthenticationData : ObjectMapper.Mappable {
+  public var version: Swift.String?
+  public var recipient: FusionCloud.Recipient?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class Recipient : ObjectMapper.Mappable {
+  public var mac: Swift.String?
+  public var kek: FusionCloud.KEK?
+  public var macAlgorithm: FusionCloud.MACAlgorithm?
+  public var encapContent: FusionCloud.EncapsulatedContent?
+  required public init()
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class KEK : ObjectMapper.Mappable {
+  public var version: Swift.String?
+  public var encryptedKey: Swift.String?
+  public var kekIdentifier: FusionCloud.KEKIdentifier?
+  public var kekAlgorithm: FusionCloud.KeyEncryptionAlgorithm?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class KEKIdentifier : ObjectMapper.Mappable {
+  public var keyIdentifier: Swift.String?
+  public var keyVersion: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class KeyEncryptionAlgorithm : ObjectMapper.Mappable {
+  public var algorithm: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class MACAlgorithm : ObjectMapper.Mappable {
+  public var algorithm: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class EncapsulatedContent : ObjectMapper.Mappable {
+  public var contentType: Swift.String?
+  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  @objc deinit
+}
+public class SaleToPOIRequest : ObjectMapper.Mappable {
+  public var messageHeader: FusionCloud.MessageHeader?
+  public var loginRequest: FusionCloud.LoginRequest?
+  public var securityTrailer: FusionCloud.SecurityTrailer?
+  public var displayRequest: FusionCloud.DisplayRequest?
+  public var eventNotification: FusionCloud.EventNotification?
+  required public init?(map: ObjectMapper.Map)
+  required public init()
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+extension FusionCloud.CreditCardType : Swift.Equatable {}
+extension FusionCloud.CreditCardType : Swift.Hashable {}
+extension FusionCloud.CreditCardType : Swift.RawRepresentable {}

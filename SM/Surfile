@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>output_path</key>
+        <string>xc_framework</string>
+        <key>framework</key>
+        <string>FusionCloud</string>
+        <key>targets</key>
+        <array>
+            <dict>
+                <key>sdk</key>
+                <string>iOS</string>
+                <key>workspace</key>
+                <string>FusionCloud.xcworkspace</string>
+                <key>scheme</key>
+                <string>FusionCloud</string>
+            </dict>
+            <dict>
+                <key>sdk</key>
+                <string>iOSSimulator</string>
+                <key>workspace</key>
+                <string>FusionCloud.xcworkspace</string>
+                <key>scheme</key>
+                <string>FusionCloud</string>
+            </dict>
+            <!--
+               Remove this comment and add more targets for Simulators and the Devices.
+            -->
+        </array>
+        <key>finalActions</key>
+        <array>
+            <string>openDirectory</string>
+        </array>
+    </dict>
+</plist>
