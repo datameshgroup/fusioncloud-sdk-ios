@@ -40,7 +40,6 @@ public class FusionClient: WebSocketDelegate{
             fusionClientDelegate?.socketConnected(client: self)
         case .disconnected(_, _):
             fusionClientDelegate?.socketDisconnected(client: self)
-            //reconnect?
         case .text(let string):
             fusionClientDelegate?.socketReceived(client: self, data: string)
             parseResponse(str: string)
@@ -155,7 +154,7 @@ public class FusionClient: WebSocketDelegate{
                 let r = poiRequ?.eventNotification ?? poiResp?.eventNotification
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
-                    return
+                    return 
                 }
                 fusionClientDelegate?.eventNotificationReceived(client: self, messageHeader: mh!, eventNotification: r!)
                 break
@@ -272,6 +271,7 @@ public class FusionClient: WebSocketDelegate{
                 }
             }
         }
+        //if payment, check if connected, 
     
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)
 

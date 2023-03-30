@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>output_path</key>
-        <string>xc_framework</string>
+        <string></string>
         <key>framework</key>
         <string>FusionCloud</string>
         <key>targets</key>
