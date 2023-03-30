@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6055F2851E97567D9FF6D6E6 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9981D13E32DADADC0092A4 /* Pods_FusionCloud.framework */; };
 		AB87727828B4A22100D62897 /* FusionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87727728B4A22100D62897 /* FusionClient.swift */; };
 		AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
 		ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */; };
@@ -39,7 +40,6 @@
 		D67D0CD82883D39E00B7003C /* SaleToPOIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */; };
 		D68F218028294B5200BC809A /* FusionCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = D68F217228294B5200BC809A /* FusionCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D68F218A28294C7700BC809A /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68F218928294C7700BC809A /* TestClass.swift */; };
-		E72B9DE13913BBBCC6EB1C11 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		388CF733BF7F56028B0877B5 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		712B573AFC3B02D963265F9B /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
 		AB87727728B4A22100D62897 /* FusionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FusionClient.swift; path = client/FusionClient.swift; sourceTree = "<group>"; };
 		ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
 		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +89,7 @@
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FusionCloud.framework; path = "/Users/vanessa/Desktop/repos/fusioncloud-sdk-ios/build/Debug-iphoneos/FusionCloud.framework"; sourceTree = "<absolute>"; };
-		D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
+		FD9981D13E32DADADC0092A4 /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72B9DE13913BBBCC6EB1C11 /* Pods_FusionCloud.framework in Frameworks */,
+				6055F2851E97567D9FF6D6E6 /* Pods_FusionCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,18 +114,10 @@
 		0A4DD0407C91046B8157D561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */,
-				D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */,
+				388CF733BF7F56028B0877B5 /* Pods-FusionCloud.debug.xcconfig */,
+				712B573AFC3B02D963265F9B /* Pods-FusionCloud.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		989EB0A58B24E3D294C1F78E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				07E2918D376AB2C96F9EF821 /* Pods_FusionCloud.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D615D6412839FBA4004A1772 /* Model */ = {
@@ -194,7 +186,7 @@
 				D68F217128294B5200BC809A /* FusionCloud */,
 				0A4DD0407C91046B8157D561 /* Pods */,
 				ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */,
-				989EB0A58B24E3D294C1F78E /* Frameworks */,
+				EC920AB8C5108257790D94EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +199,14 @@
 				D68F218928294C7700BC809A /* TestClass.swift */,
 			);
 			path = FusionCloud;
+			sourceTree = "<group>";
+		};
+		EC920AB8C5108257790D94EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD9981D13E32DADADC0092A4 /* Pods_FusionCloud.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */;
 			buildPhases = (
-				7226FEA6CD7293E686C8063C /* [CP] Check Pods Manifest.lock */,
+				C6148CC9478663FC1A428AE1 /* [CP] Check Pods Manifest.lock */,
 				D68F216A28294B5200BC809A /* Headers */,
 				D68F216B28294B5200BC809A /* Sources */,
 				D68F216C28294B5200BC809A /* Frameworks */,
@@ -317,7 +317,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7226FEA6CD7293E686C8063C /* [CP] Check Pods Manifest.lock */ = {
+		C6148CC9478663FC1A428AE1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,7 +523,7 @@
 		};
 		D68F218428294B5200BC809A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F15646CCDBF34227DBC2C44 /* Pods-FusionCloud.debug.xcconfig */;
+			baseConfigurationReference = 388CF733BF7F56028B0877B5 /* Pods-FusionCloud.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,7 +558,7 @@
 		};
 		D68F218528294B5200BC809A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D99647BF6A971F2CD0F0E0F1 /* Pods-FusionCloud.release.xcconfig */;
+			baseConfigurationReference = 712B573AFC3B02D963265F9B /* Pods-FusionCloud.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
