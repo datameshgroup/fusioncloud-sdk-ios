@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 
-public class LoginResponse: Mappable{
+public class LoginResponse: Mappable, ResponseType{
     
     public var response: Response?
     public var poiSystemData: POISystemData?
@@ -23,29 +23,6 @@ public class LoginResponse: Mappable{
     public required init?(map: Map) {}
     public required init(){}
 }
-
-
-public class Response : Mappable {
-    public var result: String?
-    public var errorCondition: String?
-    public var additionalResponse: String?
-    
-
-    public func mapping(map: Map) {
-        result              <-  map["Result"]
-        errorCondition      <-  map["ErrorCondition"]
-        additionalResponse  <-  map["AdditionalResponse"]
-    }
-    
-    public func isSuccess() -> Bool {
-        let r = result?.uppercased() ?? "";
-        return (r == "SUCCESS") || (r == "PARTIAL")
-    }
-    
-    public required init?(map: Map) {}
-    public required init(){}
-}
-
 
 public class POISystemData : Mappable {
     
@@ -85,8 +62,8 @@ public class POISoftware : Mappable {
 
     public class POITerminalData : Mappable {
         
-        var terminalEnvironment: String?
-        var poiCapabilities: [String]?
+        var terminalEnvironment: TerminalEnvironment?
+        var poiCapabilities: [POICapability]?
         var poiProfile: POIProfile?
         var poiSerialNumber: String?
         
@@ -116,19 +93,21 @@ public class POISoftware : Mappable {
 public class POIStatus : Mappable {
     
     public var globalStatus: String?
-    public var PEDOKFlag: Bool?
-    public var cardReaderOKFlag: Bool?
+    public var pedOkFlag: Bool?
+    public var securityOkFlag: Bool?
+    public var cardReaderOkFlag: Bool?
     public var printerStatus: String?
     public var communicationOKFlag: Bool?
     public var fraudPreventionFlag: Bool?
     
     public func mapping(map: Map) {
         globalStatus        <-  map["GlobalStatus"]
-        PEDOKFlag           <-  map["PEDOKFlag"]
-        cardReaderOKFlag    <-  map["CardReaderOKFlag"]
+        pedOkFlag           <-  map["PEDOKFlag"]
+        securityOkFlag      <-  map["SecurityOKFlag"]
+        cardReaderOkFlag    <-  map["CardReaderOKFlag"]
         printerStatus       <-  map["PrinterStatus"]
-        communicationOKFlag         <-  map["CommunicationOKFlag"]
-        fraudPreventionFlag       <-  map["FraudPreventionFlag"]
+        communicationOKFlag <-  map["CommunicationOKFlag"]
+        fraudPreventionFlag <-  map["FraudPreventionFlag"]
     }
     
     public required init?(map: Map) {}

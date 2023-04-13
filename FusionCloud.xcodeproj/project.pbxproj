@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07AC08B689BD5335A3B41704 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */; };
+		265B487829E64045009D996C /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B487729E64045009D996C /* CustomField.swift */; };
+		265B487A29E64344009D996C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B487929E64344009D996C /* Enums.swift */; };
+		265B487C29E665BE009D996C /* ReversalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B487B29E665BE009D996C /* ReversalRequest.swift */; };
+		265B487E29E66853009D996C /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B487D29E66853009D996C /* EventNotification.swift */; };
+		265B488029E668EE009D996C /* DisplayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B487F29E668EE009D996C /* DisplayResponse.swift */; };
+		265B488229E66A92009D996C /* ReversalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488129E66A92009D996C /* ReversalResponse.swift */; };
+		265B488429E66CF5009D996C /* PaymentResponseSaleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488329E66CF5009D996C /* PaymentResponseSaleData.swift */; };
+		265B488629E67448009D996C /* Loyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488529E67448009D996C /* Loyalty.swift */; };
+		265B488829E67B61009D996C /* Rebates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488729E67B61009D996C /* Rebates.swift */; };
+		265B488A29E68B91009D996C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488929E68B91009D996C /* Response.swift */; };
+		265B488C29E68DDB009D996C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B488B29E68DDB009D996C /* Protocols.swift */; };
+		2FE89A83B078C0B0290A84D2 /* Pods_FusionCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928D86148040E2CE070095BF /* Pods_FusionCloud.framework */; };
 		AB87727828B4A22100D62897 /* FusionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87727728B4A22100D62897 /* FusionClient.swift */; };
 		AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */; };
 		ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */; };
@@ -18,7 +29,6 @@
 		D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6482839FBA4004A1772 /* LoginRequest.swift */; };
 		D615D6602839FBA4004A1772 /* PrintRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6492839FBA4004A1772 /* PrintRequest.swift */; };
 		D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64A2839FBA4004A1772 /* InputRequest.swift */; };
-		D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */; };
 		D615D6642839FBA4004A1772 /* ReconcillationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */; };
 		D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64E2839FBA4004A1772 /* DisplayRequest.swift */; };
 		D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D64F2839FBA4004A1772 /* AbortRequest.swift */; };
@@ -28,7 +38,6 @@
 		D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6532839FBA4004A1772 /* SaleToPOI.swift */; };
 		D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6542839FBA4004A1772 /* MessageHeader.swift */; };
 		D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615D6562839FBA4004A1772 /* Crypto.swift */; };
-		D615D66F2839FBA4004A1772 /* dev.cer in Resources */ = {isa = PBXBuildFile; fileRef = D615D6592839FBA4004A1772 /* dev.cer */; };
 		D64E78162867537100E6CC46 /* FusionCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E78152867537100E6CC46 /* FusionCloud.swift */; };
 		D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB12844EDB8001D123C /* PrintResponse.swift */; };
 		D6712AB42844EE00001D123C /* InputResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712AB32844EE00001D123C /* InputResponse.swift */; };
@@ -53,12 +62,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
-		1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
-		491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		265B483D29E50EE5009D996C /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		265B487729E64045009D996C /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
+		265B487929E64344009D996C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		265B487B29E665BE009D996C /* ReversalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversalRequest.swift; sourceTree = "<group>"; };
+		265B487D29E66853009D996C /* EventNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNotification.swift; sourceTree = "<group>"; };
+		265B487F29E668EE009D996C /* DisplayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayResponse.swift; sourceTree = "<group>"; };
+		265B488129E66A92009D996C /* ReversalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversalResponse.swift; sourceTree = "<group>"; };
+		265B488329E66CF5009D996C /* PaymentResponseSaleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponseSaleData.swift; sourceTree = "<group>"; };
+		265B488529E67448009D996C /* Loyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loyalty.swift; sourceTree = "<group>"; };
+		265B488729E67B61009D996C /* Rebates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rebates.swift; sourceTree = "<group>"; };
+		265B488929E68B91009D996C /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		265B488B29E68DDB009D996C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		67C89B5176FBD8EA7ADA526B /* Pods-FusionCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.release.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.release.xcconfig"; sourceTree = "<group>"; };
+		928D86148040E2CE070095BF /* Pods_FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB87727728B4A22100D62897 /* FusionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FusionClient.swift; path = client/FusionClient.swift; sourceTree = "<group>"; };
 		ABAA3ACD28C09EB9007EF611 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
 		ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FusionCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD020E2C0CBD6A0FF22D7C1 /* Pods-FusionCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusionCloud.debug.xcconfig"; path = "Target Support Files/Pods-FusionCloud/Pods-FusionCloud.debug.xcconfig"; sourceTree = "<group>"; };
 		D615D6432839FBA4004A1772 /* PaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		D615D6442839FBA4004A1772 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		D615D6452839FBA4004A1772 /* SalePOIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalePOIResponse.swift; sourceTree = "<group>"; };
@@ -66,7 +87,6 @@
 		D615D6482839FBA4004A1772 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		D615D6492839FBA4004A1772 /* PrintRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintRequest.swift; sourceTree = "<group>"; };
 		D615D64A2839FBA4004A1772 /* InputRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRequest.swift; sourceTree = "<group>"; };
-		D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOILoginRequest.swift; sourceTree = "<group>"; };
 		D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconcillationRequest.swift; sourceTree = "<group>"; };
 		D615D64E2839FBA4004A1772 /* DisplayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRequest.swift; sourceTree = "<group>"; };
 		D615D64F2839FBA4004A1772 /* AbortRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbortRequest.swift; sourceTree = "<group>"; };
@@ -76,7 +96,6 @@
 		D615D6532839FBA4004A1772 /* SaleToPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleToPOI.swift; sourceTree = "<group>"; };
 		D615D6542839FBA4004A1772 /* MessageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
 		D615D6562839FBA4004A1772 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
-		D615D6592839FBA4004A1772 /* dev.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = dev.cer; sourceTree = "<group>"; };
 		D64E78152867537100E6CC46 /* FusionCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FusionCloud.swift; sourceTree = "<group>"; };
 		D6712AB12844EDB8001D123C /* PrintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintResponse.swift; sourceTree = "<group>"; };
 		D6712AB32844EE00001D123C /* InputResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputResponse.swift; sourceTree = "<group>"; };
@@ -89,7 +108,6 @@
 		D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleToPOIRequest.swift; sourceTree = "<group>"; };
 		D68F217228294B5200BC809A /* FusionCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FusionCloud.h; sourceTree = "<group>"; };
 		D68F218928294C7700BC809A /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
-		D68F21A52829561100BC809A /* FusionCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusionCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07AC08B689BD5335A3B41704 /* Pods_FusionCloud.framework in Frameworks */,
+				2FE89A83B078C0B0290A84D2 /* Pods_FusionCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,16 +132,16 @@
 		0A4DD0407C91046B8157D561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */,
-				1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */,
+				BCD020E2C0CBD6A0FF22D7C1 /* Pods-FusionCloud.debug.xcconfig */,
+				67C89B5176FBD8EA7ADA526B /* Pods-FusionCloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		7EA8F3BCF373577A5FE2D773 /* Frameworks */ = {
+		691C8BE96D64CB817518F310 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				491B8C52FEB7F08297B1FE7F /* Pods_FusionCloud.framework */,
+				928D86148040E2CE070095BF /* Pods_FusionCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +155,8 @@
 				D615D6542839FBA4004A1772 /* MessageHeader.swift */,
 				D615D6462839FBA4004A1772 /* SecurityTrailer.swift */,
 				AB87727728B4A22100D62897 /* FusionClient.swift */,
+				265B487929E64344009D996C /* Enums.swift */,
+				265B488B29E68DDB009D996C /* Protocols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +174,13 @@
 				D6712AB92844EE83001D123C /* TransactionStatusResponse.swift */,
 				D6712ABB2844EEAE001D123C /* CardAcquisitionResponse.swift */,
 				D6712ABF2845117B001D123C /* LogoutResponse.swift */,
+				265B487D29E66853009D996C /* EventNotification.swift */,
+				265B487F29E668EE009D996C /* DisplayResponse.swift */,
+				265B488129E66A92009D996C /* ReversalResponse.swift */,
+				265B488329E66CF5009D996C /* PaymentResponseSaleData.swift */,
+				265B488529E67448009D996C /* Loyalty.swift */,
+				265B488729E67B61009D996C /* Rebates.swift */,
+				265B488929E68B91009D996C /* Response.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -165,7 +192,6 @@
 				D615D6482839FBA4004A1772 /* LoginRequest.swift */,
 				D615D6492839FBA4004A1772 /* PrintRequest.swift */,
 				D615D64A2839FBA4004A1772 /* InputRequest.swift */,
-				D615D64C2839FBA4004A1772 /* SaleToPOILoginRequest.swift */,
 				D615D64D2839FBA4004A1772 /* ReconcillationRequest.swift */,
 				D615D64E2839FBA4004A1772 /* DisplayRequest.swift */,
 				D615D64F2839FBA4004A1772 /* AbortRequest.swift */,
@@ -174,6 +200,8 @@
 				D615D6522839FBA4004A1772 /* CardAcquisitionRequest.swift */,
 				D6712ABD28451104001D123C /* LogoutRequest.swift */,
 				D67D0CD72883D39E00B7003C /* SaleToPOIRequest.swift */,
+				265B487729E64045009D996C /* CustomField.swift */,
+				265B487B29E665BE009D996C /* ReversalRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -182,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				D615D6562839FBA4004A1772 /* Crypto.swift */,
-				D615D6592839FBA4004A1772 /* dev.cer */,
 				D64E78152867537100E6CC46 /* FusionCloud.swift */,
 			);
 			path = Utility;
@@ -192,10 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				D68F217128294B5200BC809A /* FusionCloud */,
-				D68F21A52829561100BC809A /* FusionCloud.framework */,
 				0A4DD0407C91046B8157D561 /* Pods */,
 				ABF0B92A289A39A600A06ED3 /* FusionCloudTests.xctest */,
-				7EA8F3BCF373577A5FE2D773 /* Frameworks */,
+				265B483D29E50EE5009D996C /* FusionCloud.framework */,
+				691C8BE96D64CB817518F310 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,7 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D68F218328294B5200BC809A /* Build configuration list for PBXNativeTarget "FusionCloud" */;
 			buildPhases = (
-				61B053AD559E66B63BC7AF12 /* [CP] Check Pods Manifest.lock */,
+				B3CDEBF9CAABAB39F9849501 /* [CP] Check Pods Manifest.lock */,
 				D68F216A28294B5200BC809A /* Headers */,
 				D68F216B28294B5200BC809A /* Sources */,
 				D68F216C28294B5200BC809A /* Frameworks */,
@@ -240,7 +267,7 @@
 			);
 			name = FusionCloud;
 			productName = FusionCloud;
-			productReference = D68F21A52829561100BC809A /* FusionCloud.framework */;
+			productReference = 265B483D29E50EE5009D996C /* FusionCloud.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D68F217828294B5200BC809A /* FusionCloudTests */ = {
@@ -304,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D615D66F2839FBA4004A1772 /* dev.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +344,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		61B053AD559E66B63BC7AF12 /* [CP] Check Pods Manifest.lock */ = {
+		B3CDEBF9CAABAB39F9849501 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,31 +374,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8B828428A0BB9700982344 /* TransactionStatusResponse.swift in Sources */,
-				D615D6632839FBA4004A1772 /* SaleToPOILoginRequest.swift in Sources */,
+				265B488829E67B61009D996C /* Rebates.swift in Sources */,
 				AB87727828B4A22100D62897 /* FusionClient.swift in Sources */,
 				D68F218A28294C7700BC809A /* TestClass.swift in Sources */,
+				265B488229E66A92009D996C /* ReversalResponse.swift in Sources */,
 				D615D65F2839FBA4004A1772 /* LoginRequest.swift in Sources */,
 				D615D6692839FBA4004A1772 /* CardAcquisitionRequest.swift in Sources */,
 				D615D65C2839FBA4004A1772 /* LoginResponse.swift in Sources */,
 				D615D66C2839FBA4004A1772 /* Crypto.swift in Sources */,
 				D615D6652839FBA4004A1772 /* DisplayRequest.swift in Sources */,
+				265B488629E67448009D996C /* Loyalty.swift in Sources */,
+				265B487A29E64344009D996C /* Enums.swift in Sources */,
 				D615D65D2839FBA4004A1772 /* SalePOIResponse.swift in Sources */,
+				265B487829E64045009D996C /* CustomField.swift in Sources */,
 				D6712AB42844EE00001D123C /* InputResponse.swift in Sources */,
 				D615D66A2839FBA4004A1772 /* SaleToPOI.swift in Sources */,
 				D6712ABC2844EEAE001D123C /* CardAcquisitionResponse.swift in Sources */,
 				D6712AC02845117B001D123C /* LogoutResponse.swift in Sources */,
+				265B488429E66CF5009D996C /* PaymentResponseSaleData.swift in Sources */,
 				ABAA3ACE28C09EB9007EF611 /* CreditCardValidator.swift in Sources */,
 				D615D66B2839FBA4004A1772 /* MessageHeader.swift in Sources */,
+				265B487C29E665BE009D996C /* ReversalRequest.swift in Sources */,
 				D615D6672839FBA4004A1772 /* PaymentRequest.swift in Sources */,
+				265B488A29E68B91009D996C /* Response.swift in Sources */,
 				D615D6642839FBA4004A1772 /* ReconcillationRequest.swift in Sources */,
 				D6712AB82844EE5A001D123C /* AbortResponse.swift in Sources */,
 				D615D65B2839FBA4004A1772 /* PaymentResponse.swift in Sources */,
+				265B488C29E68DDB009D996C /* Protocols.swift in Sources */,
+				265B488029E668EE009D996C /* DisplayResponse.swift in Sources */,
 				D615D6602839FBA4004A1772 /* PrintRequest.swift in Sources */,
 				D6712AB22844EDB8001D123C /* PrintResponse.swift in Sources */,
 				D615D6682839FBA4004A1772 /* TransactionStatusRequest.swift in Sources */,
 				D615D6612839FBA4004A1772 /* InputRequest.swift in Sources */,
 				D6712AB62844EE34001D123C /* ReconcillationResponse.swift in Sources */,
 				D64E78162867537100E6CC46 /* FusionCloud.swift in Sources */,
+				265B487E29E66853009D996C /* EventNotification.swift in Sources */,
 				D615D6662839FBA4004A1772 /* AbortRequest.swift in Sources */,
 				D6712ABE28451104001D123C /* LogoutRequest.swift in Sources */,
 				D615D65E2839FBA4004A1772 /* SecurityTrailer.swift in Sources */,
@@ -452,7 +488,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -522,7 +558,7 @@
 		};
 		D68F218428294B5200BC809A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09831E97BA109433C4A997C6 /* Pods-FusionCloud.debug.xcconfig */;
+			baseConfigurationReference = BCD020E2C0CBD6A0FF22D7C1 /* Pods-FusionCloud.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,7 +571,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +592,7 @@
 		};
 		D68F218528294B5200BC809A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB16799E830FDD933FB9B99 /* Pods-FusionCloud.release.xcconfig */;
+			baseConfigurationReference = 67C89B5176FBD8EA7ADA526B /* Pods-FusionCloud.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -569,7 +605,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

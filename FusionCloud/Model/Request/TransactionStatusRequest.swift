@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class TransactionStatusRequest: Mappable {
+public class TransactionStatusRequest: Mappable, Request {
     
     
     public var messageReference: MessageReference?
@@ -22,7 +22,7 @@ public class TransactionStatusRequest: Mappable {
 
 public class MessageReference: Mappable {
     
-    public var messageCategory: String?
+    public var messageCategory: MessageCategory?
     public var serviceID: String?
     public var saleID: String?
     public var poiID: String?

@@ -6,10 +6,13 @@ public class PaymentRequest: Mappable {
   public var saleData: SaleData?
   public var paymentTransaction: PaymentTransaction?
   public var paymentData: PaymentData?
+  public var customFields: [CustomField]?
+    
   public func mapping(map: Map) {
-    saleData <- map["SaleData"]
-    paymentTransaction <- map["PaymentTransaction"]
-    paymentData <- map["PaymentData"]
+    saleData            <- map["SaleData"]
+    paymentTransaction  <- map["PaymentTransaction"]
+    paymentData         <- map["PaymentData"]
+    customFields        <- map["CustomFields"]
   }
 
   public required init?(map: Map) {}
@@ -50,7 +53,7 @@ public class SaleTransactionID: Mappable {
 
   public func mapping(map: Map) {
       transactionID <- map["TransactionID"]
-      timeStamp <- (map["TimeStamp"], ISO8601DateTransform())
+      timeStamp     <- (map["TimeStamp"], ISO8601DateTransform())
   }
 
   public required init?(map: Map) {}
@@ -63,21 +66,22 @@ public class SaleTransactionID: Mappable {
 
 public class PaymentData: Mappable {
 
-  public var paymentType: String?
+  public var paymentType: PaymentType?
   public var paymentInstrumentData: PaymentInstrumentData?
 
   public func mapping(map: Map) {
-    paymentType <- map["PaymentType"]
+    paymentType             <- map["PaymentType"]
+//    paymentInstrumentData   <- map["PaymentInstrumentData"]
   }
 
   public required init?(map: Map) {
   }
   public required init() {
-      paymentType = "Normal"
+      paymentType = .Normal
   }
-    public required init(paymentType: String) {
-        self.paymentType = paymentType;
-    }
+  public required init(paymentType: PaymentType) {
+      self.paymentType = paymentType;
+  }
 }
 
 public class PaymentTransaction: Mappable {
@@ -118,11 +122,17 @@ public class OrigionalPOITransaction: Mappable {
     public var saleID: String?
     public var poiID: String?
     public var poiTransactionID: POITransactionID?
+    public var reuseCardDataFlag: Bool?
+    public var approvalCode: String?
+    public var lastTransactionFlag: Bool?
     
     public func mapping(map: Map) {
-        saleID <- map["SaleID"]
-        poiID <- map["POIID"]
-        poiTransactionID <- map["POITransactionID"]
+        saleID              <- map["SaleID"]
+        poiID               <- map["POIID"]
+        poiTransactionID    <- map["POITransactionID"]
+        reuseCardDataFlag   <- map["ReuseCardDataFlag"]
+        approvalCode        <- map["ApprovalCode"]
+        lastTransactionFlag <- map["LastTransactionFlag"]
     }
     
     public required init?(map: Map) {}
@@ -138,14 +148,18 @@ public class AmountsReq: Mappable {
   public var tipAmount: NSDecimalNumber?
   public var surchargeAmount: NSDecimalNumber?
   public var paidAmount: NSDecimalNumber?
+  public var maximumCashBackAmount: NSDecimalNumber?
+  public var minimumSplitAmount: NSDecimalNumber?
 
   public func mapping(map: Map) {
-    currency <- map["Currency"]
+    currency        <- map["Currency"]
     requestedAmount <- (map["RequestedAmount"], NSDecimalNumberTransform())
-    cashBackAmount <- (map["CashBackAmount"], NSDecimalNumberTransform())
-    tipAmount <- (map["TipAmount"], NSDecimalNumberTransform())
+    cashBackAmount  <- (map["CashBackAmount"], NSDecimalNumberTransform())
+    tipAmount       <- (map["TipAmount"], NSDecimalNumberTransform())
     surchargeAmount <- (map["surchargeAmount"], NSDecimalNumberTransform())
-    paidAmount <- (map["paidAmount"], NSDecimalNumberTransform())
+    paidAmount      <- (map["paidAmount"], NSDecimalNumberTransform())
+    maximumCashBackAmount   <- (map["MaximumCashBackAmount"], NSDecimalNumberTransform())
+    minimumSplitAmount      <- (map["MinimumSplitAmount"], NSDecimalNumberTransform())
   }
 
   public required init?(map: Map) {}
@@ -180,6 +194,7 @@ public class SaleItem: Mappable {
   public var colour: String?
   public var weight: NSDecimalNumber?
   public var weightUnitOfMeasure: String?
+  public var customFields: [CustomField]?
 
   public func mapping(map: Map) {
     itemID                  <- map["ItemID"]
@@ -208,6 +223,7 @@ public class SaleItem: Mappable {
     colour                  <- map["Colour"]
     weight                  <- (map["Weight"],NSDecimalNumberTransform())
     weightUnitOfMeasure     <- map["WeightUnitOfMeasure"]
+    customFields            <- map["CustomFields"]
   }
 
   public required init?(map: Map) {}

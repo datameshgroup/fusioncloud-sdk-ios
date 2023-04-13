@@ -10,7 +10,7 @@ import ObjectMapper
 
 
 
-public class InputResponse: Mappable {
+public class InputResponse: Mappable, ResponseType {
     
     var outputResult: OutputResult?
     var inputResult: InputResult?
@@ -27,15 +27,19 @@ public class InputResponse: Mappable {
 public class OutputResult: Mappable {
     
     var device: String?
-    var infoQuality: String?
-    var response: Response?
+    var infoQualify: InfoQualify?
+    var result: String?
+    var errorCondition: String?
+    var additionalReponse: String?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        device      <-  map["Device"]
-        infoQuality <-  map["InfoQualify"]
-        response    <-  map["Response"]
+        device              <-  map["Device"]
+        infoQualify         <-  map["InfoQualify"]
+        result              <-  map["Result"]
+        errorCondition      <-  map["ErrorCondition"]
+        additionalReponse   <-  map["AdditionalResponse"]
     }
 }
 
@@ -69,6 +73,6 @@ public class Input : Mappable {
        inputCommand     <-  map["InputCommand"]
        confirmedFlag    <-  map["ConfirmedFlag"]
        password         <-  map["Password"]
-        menuEntryNumber  <- map["MenuEntryNumber"]
+       menuEntryNumber  <- map["MenuEntryNumber"]
     }
 }

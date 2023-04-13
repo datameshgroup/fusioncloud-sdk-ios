@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class CardAcquisitionRequest: Mappable {
+public class CardAcquisitionRequest: Mappable, Request {
     
     public var saleData: SaleData?
     public var cardAcquisitionTransaction: CardAcquisitionTransaction?

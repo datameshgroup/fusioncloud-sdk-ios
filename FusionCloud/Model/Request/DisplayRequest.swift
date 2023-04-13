@@ -10,7 +10,7 @@ import ObjectMapper
 
 
 
-public class DisplayRequest: Mappable {
+public class DisplayRequest: Mappable, Request {
     public var displayOutput: DisplayOutput?
     
     public func mapping(map: Map) {

@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class ReconciliationResponse: Mappable {
+public class ReconciliationResponse: Mappable, ResponseType {
     
     var reconciliationType: String?
     var poiReconciliationID: String?
@@ -18,31 +18,35 @@ public class ReconciliationResponse: Mappable {
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
-        reconciliationType           <-      map["ReconciliationType"]
-        poiReconciliationID          <-      map["POIReconciliationID"]
+        reconciliationType  <-      map["ReconciliationType"]
+        poiReconciliationID <-      map["POIReconciliationID"]
         response            <-      map["Response"]
-        transactionTotals   <-      map["PaymentTotals"]
+        transactionTotals   <-      map["TransactionTotal"]
     }
 }
 
 public class TransactionTotal: Mappable {
     
-    var paymentTotals: [PaymentTotal]?
-    var paymentInstrumentType: String?
+    var paymentInstrumentType: PaymentInstrumentType?
     var cardBrand: String?
-    var shiftNumber: String?
-    var totalsGroupID: String?
+    var tid: String?
+    var mid: String?
+    var acquirerID: String?
+    var lastShiftTotalTime: String?
     var paymentCurrency: String?
+    var paymentTotals: [PaymentTotal]?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         paymentInstrumentType   <-  map["PaymentInstrumentType"]
         cardBrand               <-  map["CardBrand"]
-        paymentTotals            <-  map["PaymentTotals"]
-        shiftNumber             <-  map["ShiftNumber"]
-        totalsGroupID            <-  map["TotalsGroupID"]
+        tid                     <-  map["TID"]
+        mid                     <-  map["MID"]
+        acquirerID              <-  map["AcquirerID"]
+        lastShiftTotalTime      <-  map["LastShiftTotalTime"]
         paymentCurrency         <-  map["PaymentCurrency"]
+        paymentTotals           <-  map["PaymentTotals"]
     }
 }
 
@@ -50,19 +54,19 @@ public class TransactionTotal: Mappable {
 public class PaymentTotal: Mappable {
     
     
-    public var transactionType: String?
-    public var transactionCount: String?
-    public var transactionAmount: String?
-    public var tipAmount: String?
-    public var surchargeAmount: String?
+    public var transactionType: TransactionType?
+    public var transactionCount: Int64?
+    public var transactionAmount: NSDecimalNumber?
+    public var tipAmount: NSDecimalNumber?
+    public var surchargeAmount: NSDecimalNumber?
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         transactionType     <-      map["TransactionType"]
         transactionCount    <-      map["TransactionCount"]
-        transactionAmount     <-      map["TransactionAmount"]
-        tipAmount           <-      map["TipAmount"]
-        surchargeAmount         <-      map["SurchargeAmount"]
+        transactionAmount   <-      (map["TransactionAmount"], NSDecimalNumberTransform())
+        tipAmount           <-      (map["TipAmount"], NSDecimalNumberTransform())
+        surchargeAmount     <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
     }
 }

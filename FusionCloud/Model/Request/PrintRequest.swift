@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class PrintRequest: Mappable {
+public class PrintRequest: Mappable, Request {
     
     public var printOutput: PrintOuput?
     
