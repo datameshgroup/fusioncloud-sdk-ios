@@ -32,7 +32,6 @@ public protocol FusionClientDelegate: AnyObject {
     func cardAcquisitionResponseReceived(client: FusionClient, messageHeader: MessageHeader, cardAcquisitionResponse: CardAcquisitionResponse)
     func logoutResponseResponseReceived(client: FusionClient, messageHeader: MessageHeader, logoutResponse: LogoutResponse)
     func credentialsError(client: FusionClient,error: String)
-    
     //should put all the the final error in one func?
 }
 
@@ -98,7 +97,6 @@ public class FusionClient: WebSocketDelegate{
                 appendLog(type: "error", content: "Invalid response. Data == nil") //logtype: error
                 return
             }
-            
             let currentServiceID = poiResp?.messageheader?.serviceID ?? poiRequ?.messageHeader?.serviceID;
             
 //            if (currentServiceID!.isEmpty || currentServiceID == nil){

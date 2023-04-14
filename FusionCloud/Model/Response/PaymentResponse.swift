@@ -25,7 +25,10 @@ public class PaymentResponse: Mappable, ResponseType {
     public var paymentResult: PaymentResult?
     public var allowedProductCodes: [String]?
     public var paymentReceipt: [PaymentReceipt]?
+<<<<<<< HEAD
     public var loyaltyResult: [LoyaltyResult]?
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
 
     
     public required init?(map: Map) {}
@@ -69,12 +72,14 @@ public class POIData: Mappable {
     
     public var poiReconciliationID: String?
     public var poiTransactionID: POITransactionID?
+    public var allowedProductCodes: [String]?
     
     public init(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
         poiTransactionID      <-  map["POITransactionID"]
         poiReconciliationID   <-  map["POIReconciliationID"]
+        allowedProductCodes   <-  map["AllowedProductCodes"]
     }
 }
 
@@ -123,6 +128,7 @@ public class AmountsResp: Mappable {
     public init(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
+<<<<<<< HEAD
         currency                <-      map["Currency"]
         authorizedAmount        <-      (map["AuthorizedAmount"], NSDecimalNumberTransform())
         totalFeesAmount         <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
@@ -130,6 +136,15 @@ public class AmountsResp: Mappable {
         tipAmount               <-      (map["TipAmount"], NSDecimalNumberTransform())
         surchargeAmount         <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
         partialAuthorizedAmount <-      (map["PartialAuthorizedAmount"], NSDecimalNumberTransform())
+=======
+        currency            <-      map["Currency"]
+        authorizedAmount    <-      (map["AuthorizedAmount"], NSDecimalNumberTransform())
+        totalFeesAmount      <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
+        cashBackAmount      <-      (map["CashBackAmount"], NSDecimalNumberTransform())
+        tipAmount           <-      (map["TipAmount"], NSDecimalNumberTransform())
+        surchargeAmount     <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
+        partialAuthorizedAmount <-  (map["PartialAuthorizedAmount"], NSDecimalNumberTransform())
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
     }
 }
 
@@ -209,8 +224,13 @@ public class AmountsResp: Mappable {
     public class CardData: Mappable {
         
         /// RFID, Keyed, Manual, File, Scanned, MagStripe, ICC, SynchronousICC, Tapped, Contactless, Mobile
+<<<<<<< HEAD
         public var entryMode: EntryMode?
         public var paymentBrand: String? //PaymentBrand?
+=======
+        public var entryMode: String?
+        public var paymentBrand: String?
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
         public var maskedPan: String?
         public var account: String? ///Present if  EntryMode is "MagStripe", "ICC", or "Tapped"
         public var paymentToken: PaymentToken?
@@ -275,7 +295,6 @@ public class PaymentReceipt: Mappable {
         return receipt.base64Decoded()
     }
 }
-
 extension String {
 //: ### Base64 encoding a string
     func base64Encoded() -> String? {
@@ -285,6 +304,18 @@ extension String {
         return nil
     }
 
+<<<<<<< HEAD
+extension String {
+//: ### Base64 encoding a string
+    func base64Encoded() -> String? {
+        if let data = self.data(using: .utf8) {
+            return data.base64EncodedString()
+        }
+        return nil
+    }
+
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
 //: ### Base64 decoding a string
     func base64Decoded() -> String? {
         if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters) {

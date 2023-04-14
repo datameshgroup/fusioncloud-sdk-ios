@@ -16,6 +16,7 @@ public class SaleToPOIRequest : Mappable, Request {
     public var loginRequest: LoginRequest?
     public var cardAcquisitionRequest: CardAcquisitionRequest?
     public var displayRequest: DisplayRequest?
+<<<<<<< HEAD
     public var inputRequest: InputRequest?
     public var logoutRequest: LogoutRequest?
     public var printRequest: PrintRequest?
@@ -24,10 +25,15 @@ public class SaleToPOIRequest : Mappable, Request {
     public var reversalRequest: ReversalRequest?
     public var securityTrailer: SecurityTrailer?
     public var eventNotification: EventNotification?
+=======
+    public var eventNotification: EventNotification?
+    
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
     
     public required init?(map: Map) {}
     public required init() {}
     public func mapping(map: Map) {
+<<<<<<< HEAD
         messageHeader           <- map["MessageHeader"]
         abortRequest            <- map["AbortRequest"]
         paymentRequest          <- map["PaymentRequest"]
@@ -43,5 +49,12 @@ public class SaleToPOIRequest : Mappable, Request {
         securityTrailer         <- map["SecurityTrailer"]
         eventNotification       <- map["EventNotification"]
         
+=======
+        messageHeader       <- map["MessageHeader"]
+        loginRequest        <- map["LoginRequest"]
+        displayRequest      <-  map["DisplayRequest"]
+        securityTrailer     <- map["SecurityTrailer"]
+        eventNotification   <- map["EventNotification"]
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
     }
 }

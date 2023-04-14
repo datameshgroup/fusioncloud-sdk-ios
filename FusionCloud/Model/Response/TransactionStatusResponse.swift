@@ -40,13 +40,19 @@ public class RepeatedMessageResponse: Mappable {
 
 public class RepeatedResponseMessageBody: Mappable {
     public var paymentResponse: PaymentResponse?
+<<<<<<< HEAD
     public var reversalResponse: ReversalResponse?
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
     
     public required init?(map: Map) {}
     public required init(){}
     public func mapping(map: Map) {
         paymentResponse  <-  map["PaymentResponse"]
+<<<<<<< HEAD
         reversalResponse <-  map["ReversalResponse"]
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
         
     }
 }

@@ -65,7 +65,6 @@ public class SaleTransactionID: Mappable {
 }
 
 public class PaymentData: Mappable {
-
   public var paymentType: PaymentType?
   public var paymentInstrumentData: PaymentInstrumentData?
 
@@ -225,7 +224,6 @@ public class SaleItem: Mappable {
     weightUnitOfMeasure     <- map["WeightUnitOfMeasure"]
     customFields            <- map["CustomFields"]
   }
-
   public required init?(map: Map) {}
   public required init() {}
 }
