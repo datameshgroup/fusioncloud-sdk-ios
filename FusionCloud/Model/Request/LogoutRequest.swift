@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class LogoutRequest: Mappable {
+public class LogoutRequest: Mappable, Request {
     
     public var maintenanceAllowed: Bool?
     

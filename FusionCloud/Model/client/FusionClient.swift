@@ -9,6 +9,8 @@ import Foundation
 import Starscream
 import ObjectMapper
 
+public var lastTxnServiceID: String?
+public var lastMessageRefServiceID: String?
 
 public protocol FusionClientDelegate: AnyObject {
     //Socket events
@@ -30,6 +32,7 @@ public protocol FusionClientDelegate: AnyObject {
     func cardAcquisitionResponseReceived(client: FusionClient, messageHeader: MessageHeader, cardAcquisitionResponse: CardAcquisitionResponse)
     func logoutResponseResponseReceived(client: FusionClient, messageHeader: MessageHeader, logoutResponse: LogoutResponse)
     func credentialsError(client: FusionClient,error: String)
+    //should put all the the final error in one func?
 }
 
 @available(iOS 12.0, *)
@@ -51,22 +54,24 @@ public class FusionClient: WebSocketDelegate{
         case .reconnectSuggested(_):
             break
         case .cancelled:
-            fusionClientDelegate?.socketDisconnected(client: self)
+            fusionClientDelegate?.socketDisconnected(client: self) //thisvan
         case .error(let error):
             if let e = error as? WSError {
-                appendLog(type: "error",  content: "websocket encountered an WS-error: \(e.message)")
+                appendLog(type: "error",  content: "websocket encountered an WS-error: \(e.message)") //thisvan
             }
             else if let e = error {
-                appendLog(type: "error", content: "websocket encountered an error: \(e.localizedDescription)")
+                appendLog(type: "error", content: "websocket encountered an error: \(e.localizedDescription)") //thisvan
             }
             else {
-                appendLog(type: "error", content: "websocket encountered an unknown error")
+                appendLog(type: "error", content: "websocket encountered an unknown error") //thisvan
             }
-            fusionClientDelegate?.socketError(client: self, error: error!)
+            fusionClientDelegate?.socketError(client: self, error: error!) //thisvan
         case .pong(_):
             break;
         case .ping(_):
             break;
+        @unknown default:
+            appendLog(type: "error", content: "websocket encountered an unknown error")
         }
     }
     
@@ -92,10 +97,16 @@ public class FusionClient: WebSocketDelegate{
                 appendLog(type: "error", content: "Invalid response. Data == nil") //logtype: error
                 return
             }
+            let currentServiceID = poiResp?.messageheader?.serviceID ?? poiRequ?.messageHeader?.serviceID;
+            
+//            if (currentServiceID!.isEmpty || currentServiceID == nil){
+//                appendLog(type: "error", content: "No ServiceID received in " + (mh?.messageCategory.s) + ".  Expected value is " + lastTxnServiceID! + " .  Will process the next message instead.") //thisvan
+//                return
+//            }
             
             switch(mh!.messageCategory)
             {
-            case "Login":
+            case .Login:
                 let r = poiResp?.loginResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -103,7 +114,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.loginResponseReceived(client: self, messageHeader: mh!, loginResponse: r!)
                 break
-            case "Payment":
+            case .Payment:
                     let r = poiResp?.paymentResponse;
                     if(r == nil) {
                         appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -111,7 +122,7 @@ public class FusionClient: WebSocketDelegate{
                     }
                 fusionClientDelegate?.paymentResponseReceived(client: self, messageHeader: mh!, paymentResponse: r!)
                 break
-            case "TransactionStatus":
+            case .TransactionStatus:
                 let r = poiResp?.transactionStatusResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -119,7 +130,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.transactionStatusResponseReceived(client: self, messageHeader: mh!, transactionStatusResponse: r!)
                 break
-            case "Display":
+            case .Display:
                 let r = poiRequ?.displayRequest;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -127,7 +138,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.displayRequestReceived(client: self, messageHeader: mh!, displayRequest: r!)
                 break
-            case "Reconciliation":
+            case .Reconciliation:
                 let r = poiResp?.reconciliationResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -135,7 +146,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.reconcilationResponseReceived(client: self, messageHeader: mh!, reconcilationResponse: r!)
                 break
-            case "CardAquisition":
+            case .CardAcquisition:
                 let r = poiResp?.cardAcquisitionResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -143,7 +154,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.cardAcquisitionResponseReceived(client: self, messageHeader: mh!, cardAcquisitionResponse: r!)
                 break
-            case "Logout":
+            case .Logout:
                 let r = poiResp?.logoutResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -151,7 +162,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.logoutResponseResponseReceived(client: self, messageHeader: mh!, logoutResponse: r!)
                 break
-            case "Event":
+            case .Event:
                 let r = poiRequ?.eventNotification ?? poiResp?.eventNotification
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -160,7 +171,7 @@ public class FusionClient: WebSocketDelegate{
                 fusionClientDelegate?.eventNotificationReceived(client: self, messageHeader: mh!, eventNotification: r!)
                 break
             default:
-                appendLog(type: "info", content: "Unknown message type: " + mh!.messageCategory!)
+                appendLog(type: "info", content: "Unknown message type: \(String(describing: mh!.messageCategory))")
             }
         }
         catch is MacValidation {
@@ -201,8 +212,8 @@ public class FusionClient: WebSocketDelegate{
       public func createDefaultHeader() {
           messageHeader = MessageHeader()
           messageHeader!.protocolVersion = "3.1-dmg"
-          messageHeader!.messageClass = "Service"
-          messageHeader!.messageType = "Request"
+          messageHeader!.messageClass = MessageClass.Service
+          messageHeader!.messageType = MessageType.Request
           messageHeader!.saleID = fusionCloudConfig!.saleID
           messageHeader!.poiID = fusionCloudConfig!.poiID
       }
@@ -272,9 +283,25 @@ public class FusionClient: WebSocketDelegate{
                 }
             }
         }
-    
+        
         let request = crypto.buildRequest(kek: fusionCloudConfig!.kekValue!, request: requestBody, header: self.messageHeader!, security: self.securityTrailer!, type: type)
+        
+//        let req = SaleToPOIRequest(JSONString: request)
+        
+//        if ((req?.messageHeader?.messageCategory)! == TransactionStatusRequest){
+//            let tsr = req?.transactionStatusRequest
+//            if !(tsr==nil){
+//                lastMessageRefServiceID = req.messageReference?.serviceID
+//                appendLog(type: "info", content: "Request Message Reference ServiceID = " + lastMessageRefServiceID!)
+//            }
+//        }
+//
+//        if ((req.messageHeader?.messageCategory)! != AbortRequest){
+//            lastTxnServiceID = req!.messageHeader?.serviceID
+//            appendLog(type: "info", content: "Request ServiceID = " + lastTxnServiceID!)
+//        }
 
+        
         appendLog(type: "info", content: "TX: \(request)")
         socket!.write(data: request.data(using: .utf8)!, completion: {})
     }

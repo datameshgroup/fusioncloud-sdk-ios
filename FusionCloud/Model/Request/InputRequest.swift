@@ -10,10 +10,11 @@ import ObjectMapper
 
 /* Request */
 
-public class InputRequest : Mappable{
+public class InputRequest : Mappable, Request {
     
     var menuEntry:[Menu]?
     var displayOutput: DisplayOutput?
+    var inputData: InputData?
     
     public required init?(map: Map) {}
     public required init(){}
@@ -26,8 +27,8 @@ public class InputRequest : Mappable{
 public class InputData : Mappable {
     
     var device: String?
-    var infoQuality: String?
-    var inputCommand: String?
+    var infoQualify: InfoQualify?
+    var inputCommand: InputCommand?
     var maxInputTime: String?
     var minLength: String?
     var maxLength: String?
@@ -37,7 +38,7 @@ public class InputData : Mappable {
     public required init(){}
     public func mapping(map: Map) {
         device          <-  map["Device"]
-        infoQuality     <-  map["InfoQuality"]
+        infoQualify     <-  map["InfoQualify"]
         inputCommand    <-  map["InputCommand"]
         maxInputTime    <-  map["MaxInputTime"]
         minLength       <-  map["MinLength"]

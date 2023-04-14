@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 
-public class PaymentResponse: Mappable {
+public class PaymentResponse: Mappable, ResponseType {
     
     /**
      * Input Request/Response
@@ -20,20 +20,27 @@ public class PaymentResponse: Mappable {
      * Card Acquisition Request/Response**/
     
     public var response: PResponse?
-    public var saleData: SaleData?
+    public var saleData: PaymentResponseSaleData?
     public var poiData: POIData?
     public var paymentResult: PaymentResult?
+    public var allowedProductCodes: [String]?
     public var paymentReceipt: [PaymentReceipt]?
+<<<<<<< HEAD
+    public var loyaltyResult: [LoyaltyResult]?
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
 
     
     public required init?(map: Map) {}
     public init(){}
     public func mapping(map: Map) {
-        response        <-  map["Response"]
-        saleData        <-  map["SaleData"]
-        poiData         <-  map["POIData"]
-        paymentResult   <-  map["PaymentResult"]
-        paymentReceipt  <-  map["PaymentReceipt"]
+        response            <-  map["Response"]
+        saleData            <-  map["SaleData"]
+        poiData             <-  map["POIData"]
+        paymentResult       <-  map["PaymentResult"]
+        allowedProductCodes <-  map["AllowedProductCodes"]
+        paymentReceipt      <-  map["PaymentReceipt"]
+        loyaltyResult       <-  map["LoyaltyResult"]
     }
     
     /// TODO
@@ -42,8 +49,8 @@ public class PaymentResponse: Mappable {
 
 public class PResponse: Mappable {
         
-    public var result: String?
-    public var errorCondition: String?
+    public var result: ResponseResult?
+    public var errorCondition: ErrorCondition?
     public var additionalResponse: String?
         
     public init(){}
@@ -53,10 +60,10 @@ public class PResponse: Mappable {
         errorCondition      <-  map["ErrorCondition"]
         additionalResponse  <-  map["AdditionalResponse"]
     }
-        
+    
     public func isSuccess() -> Bool {
-        let r = result?.uppercased() ?? "";
-        return (r == "SUCCESS") || (r == "PARTIAL")
+        let r = result
+        return (r == ResponseResult.Success)
     }
 }
 
@@ -79,19 +86,19 @@ public class POIData: Mappable {
 public class POITransactionID: Mappable {
     
     public var transactionID:String?
-    public var timeStamp: String?
+    public var timeStamp: Date?
     
     public init(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
         transactionID       <-  map["TransactionID"]
-        timeStamp           <-  map["TimeStamp"]
+        timeStamp           <-  (map["TimeStamp"], ISO8601DateTransform())
     }
 }
 
 public class PaymentResult: Mappable {
     /// Normal, Refund
-    public var paymentType: String?
+    public var paymentType: PaymentType?
     public var onlineFlag: Bool?
     public var amountsResp: AmountsResp?
     public var paymentInstrumentData: PaymentInstrumentData?
@@ -121,6 +128,15 @@ public class AmountsResp: Mappable {
     public init(){}
     public required init?(map: Map) {}
     public func mapping(map: Map) {
+<<<<<<< HEAD
+        currency                <-      map["Currency"]
+        authorizedAmount        <-      (map["AuthorizedAmount"], NSDecimalNumberTransform())
+        totalFeesAmount         <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
+        cashBackAmount          <-      (map["CashBackAmount"], NSDecimalNumberTransform())
+        tipAmount               <-      (map["TipAmount"], NSDecimalNumberTransform())
+        surchargeAmount         <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
+        partialAuthorizedAmount <-      (map["PartialAuthorizedAmount"], NSDecimalNumberTransform())
+=======
         currency            <-      map["Currency"]
         authorizedAmount    <-      (map["AuthorizedAmount"], NSDecimalNumberTransform())
         totalFeesAmount      <-      (map["TotalFeesAmount"], NSDecimalNumberTransform())
@@ -128,6 +144,7 @@ public class AmountsResp: Mappable {
         tipAmount           <-      (map["TipAmount"], NSDecimalNumberTransform())
         surchargeAmount     <-      (map["SurchargeAmount"], NSDecimalNumberTransform())
         partialAuthorizedAmount <-  (map["PartialAuthorizedAmount"], NSDecimalNumberTransform())
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
     }
 }
 
@@ -162,20 +179,20 @@ public class AmountsResp: Mappable {
         public class AcquirerTransactionID: Mappable {
             
             public var transactionID: String?
-            public var timeStamp: String?
+            public var timeStamp: Date?
             
             public init(){}
             public required init?(map: Map) {}
             public func mapping(map: Map) {
                 transactionID       <-  map["TransactionID"]
-                timeStamp           <-  map["TimeStamp"]
+                timeStamp           <- (map["TimeStamp"], ISO8601DateTransform())
             }
         }
 
     public class PaymentInstrumentData: Mappable {
         
         /// Card, Check, Mobile, StoredValue, Cash
-        public var paymentInstrumentType: String?
+        public var paymentInstrumentType: PaymentInstrumentType?
         
         /// Present if PaymentInstrumentType==Card
         public var cardData: CardData?
@@ -207,8 +224,13 @@ public class AmountsResp: Mappable {
     public class CardData: Mappable {
         
         /// RFID, Keyed, Manual, File, Scanned, MagStripe, ICC, SynchronousICC, Tapped, Contactless, Mobile
+<<<<<<< HEAD
+        public var entryMode: EntryMode?
+        public var paymentBrand: String? //PaymentBrand?
+=======
         public var entryMode: String?
         public var paymentBrand: String?
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
         public var maskedPan: String?
         public var account: String? ///Present if  EntryMode is "MagStripe", "ICC", or "Tapped"
         public var paymentToken: PaymentToken?
@@ -282,6 +304,18 @@ extension String {
         return nil
     }
 
+<<<<<<< HEAD
+extension String {
+//: ### Base64 encoding a string
+    func base64Encoded() -> String? {
+        if let data = self.data(using: .utf8) {
+            return data.base64EncodedString()
+        }
+        return nil
+    }
+
+=======
+>>>>>>> f7e749e92059c07f702ed069f84858d2bf0a3841
 //: ### Base64 decoding a string
     func base64Decoded() -> String? {
         if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters) {

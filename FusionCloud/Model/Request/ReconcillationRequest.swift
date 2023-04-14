@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class ReconcillationRequest: Mappable {
+public class ReconcillationRequest: Mappable, Request {
     
     var reconciliationType: String?
     var poiReconciliationID: String?
