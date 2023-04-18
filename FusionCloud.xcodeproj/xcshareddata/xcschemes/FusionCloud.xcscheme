@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D68F216E28294B5200BC809A"
-               BuildableName = "FusionCloud.framework"
+               BuildableName = "FusionCloud"
                BlueprintName = "FusionCloud"
                ReferencedContainer = "container:FusionCloud.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D68F216E28294B5200BC809A"
-            BuildableName = "FusionCloud.framework"
+            BuildableName = "FusionCloud"
             BlueprintName = "FusionCloud"
             ReferencedContainer = "container:FusionCloud.xcodeproj">
          </BuildableReference>
