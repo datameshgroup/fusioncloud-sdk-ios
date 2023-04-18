@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public class LogoutResponse: Mappable {
+public class LogoutResponse: Mappable, ResponseType {
     
     public var response: Response?
     public var poiSystemData: POISystemData?

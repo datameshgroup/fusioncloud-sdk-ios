@@ -1,15 +1,14 @@
 //
-//  AbortResponse.swift
+//  EventNotification.swift
 //  FusionCloud
 //
-//  Created by Loey Agdan on 5/30/22.
+//  Created by Vanessa on 12/4/2023.
 //
 
 import Foundation
 import ObjectMapper
 
-
-public class AbortResponse: Mappable, ResponseType {
+public class EventNotification: Mappable, ResponseType {
     
     public var timeStamp: Date?
     public var eventToNotify: String?

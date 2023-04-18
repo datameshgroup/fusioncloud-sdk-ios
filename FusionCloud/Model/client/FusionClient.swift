@@ -95,7 +95,7 @@ public class FusionClient: WebSocketDelegate{
             
             switch(mh!.messageCategory)
             {
-            case "Login":
+            case .Login:
                 let r = poiResp?.loginResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -103,7 +103,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.loginResponseReceived(client: self, messageHeader: mh!, loginResponse: r!)
                 break
-            case "Payment":
+            case .Payment:
                     let r = poiResp?.paymentResponse;
                     if(r == nil) {
                         appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -111,7 +111,7 @@ public class FusionClient: WebSocketDelegate{
                     }
                 fusionClientDelegate?.paymentResponseReceived(client: self, messageHeader: mh!, paymentResponse: r!)
                 break
-            case "TransactionStatus":
+            case .TransactionStatus:
                 let r = poiResp?.transactionStatusResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -119,7 +119,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.transactionStatusResponseReceived(client: self, messageHeader: mh!, transactionStatusResponse: r!)
                 break
-            case "Display":
+            case .Display:
                 let r = poiRequ?.displayRequest;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -127,7 +127,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.displayRequestReceived(client: self, messageHeader: mh!, displayRequest: r!)
                 break
-            case "Reconciliation":
+            case .Reconciliation:
                 let r = poiResp?.reconciliationResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -135,7 +135,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.reconcilationResponseReceived(client: self, messageHeader: mh!, reconcilationResponse: r!)
                 break
-            case "CardAquisition":
+            case .CardAcquisition:
                 let r = poiResp?.cardAcquisitionResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -143,7 +143,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.cardAcquisitionResponseReceived(client: self, messageHeader: mh!, cardAcquisitionResponse: r!)
                 break
-            case "Logout":
+            case .Logout:
                 let r = poiResp?.logoutResponse;
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -151,7 +151,7 @@ public class FusionClient: WebSocketDelegate{
                 }
                 fusionClientDelegate?.logoutResponseResponseReceived(client: self, messageHeader: mh!, logoutResponse: r!)
                 break
-            case "Event":
+            case .Event:
                 let r = poiRequ?.eventNotification ?? poiResp?.eventNotification
                 if(r == nil) {
                     appendLog(type: "error", content: "Invalid \(String(describing: mh!.messageCategory)) response. Payload == nil")
@@ -160,7 +160,7 @@ public class FusionClient: WebSocketDelegate{
                 fusionClientDelegate?.eventNotificationReceived(client: self, messageHeader: mh!, eventNotification: r!)
                 break
             default:
-                appendLog(type: "info", content: "Unknown message type: " + mh!.messageCategory!)
+                appendLog(type: "info", content: "Unknown message type: " + mh!.messageCategory!.rawValue)
             }
         }
         catch is MacValidation {
@@ -201,8 +201,8 @@ public class FusionClient: WebSocketDelegate{
       public func createDefaultHeader() {
           messageHeader = MessageHeader()
           messageHeader!.protocolVersion = "3.1-dmg"
-          messageHeader!.messageClass = "Service"
-          messageHeader!.messageType = "Request"
+          messageHeader!.messageClass = .Service
+          messageHeader!.messageType = .Request
           messageHeader!.saleID = fusionCloudConfig!.saleID
           messageHeader!.poiID = fusionCloudConfig!.poiID
       }

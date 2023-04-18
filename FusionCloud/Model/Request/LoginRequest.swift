@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class LoginRequest: Mappable{
+public class LoginRequest: Mappable {
     
     public var dateTime: Date?
     public var saleSoftware : SaleSoftware?
@@ -39,7 +39,7 @@ public class LoginRequest: Mappable{
 public class SaleSoftware: Mappable {
     
     public var providerIdentification: String?
-    public var ApplicationName: String?
+    public var applicationName: String?
     public var softwareVersion: String?
     public var certificationCode: String?
     public var componentType: String?
@@ -48,7 +48,7 @@ public class SaleSoftware: Mappable {
     public required init?(map: Map) {}
        public func mapping(map: Map) {
            providerIdentification   <- map["ProviderIdentification"]
-           ApplicationName          <- map["ApplicationName"]
+           applicationName          <- map["ApplicationName"]
            softwareVersion          <- map["SoftwareVersion"]
            certificationCode        <- map["CertificationCode"]
            componentType            <- map["ComponentType"]
@@ -58,11 +58,12 @@ public class SaleSoftware: Mappable {
 public class SaleTerminalData: Mappable {
     
     /// Attended, SemiAttended, Unattended
-    public var terminalEnvironment: String?
+    public var terminalEnvironment: TerminalEnvironment?
     
     /// CashierStatus, CashierError, CashierInput, CustomerAssistance, PrinterReceipt,
-    public var saleCapabilities: [String]?
+    public var saleCapabilities: [SaleCapability]?
     public var saleProfile: SaleProfile?
+    public var totalsGroupID: String?
     
     public required init(){}
      public required init?(map: Map) {}
@@ -70,6 +71,7 @@ public class SaleTerminalData: Mappable {
         terminalEnvironment     <- map["TerminalEnvironment"]
         saleCapabilities        <- map["SaleCapabilities"]
         saleProfile             <- map["SaleProfile"]
+        totalsGroupID           <- map["TotalsGroupID"]
      }
 }
 

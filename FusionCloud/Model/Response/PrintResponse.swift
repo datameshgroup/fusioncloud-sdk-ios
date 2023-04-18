@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 
-public class PrintResponse: Mappable {
+public class PrintResponse: Mappable, ResponseType {
     
     public var documentQuaifier: String?
     public var response: Response?
